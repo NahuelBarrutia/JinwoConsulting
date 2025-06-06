@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jinwo Consulting | Expertos en Optimización de Bases de Datos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/brands.min.css">
+    <style>
+        .hero-gradient {
+            background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 50%, #3b82f6 100%);
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .pop-in {
+            animation: popIn 0.5s ease-out forwards;
+        }
+        @keyframes popIn {
+            0% { opacity: 0; transform: scale(0.8); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+        .progress-bar {
+            height: 4px;
+            background-color: #2563eb;
+            width: 0%;
+            transition: width 2s ease-in-out;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased text-gray-800">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <i class="fas fa-database text-blue-600 text-2xl mr-2"></i>
+                        <span class="text-xl font-bold text-blue-600">Jinwo Consulting</span>
+                    </div>
+                </div>
+                <div class="hidden md:ml-6 md:flex md:items-center md:space-x-8">
+                    <a href="#services" class="text-gray-900 hover:text-blue-600 px-3 py-2 text-sm font-medium transition duration-300">Servicios</a>
+                    <a href="#testimonials" class="text-gray-900 hover:text-blue-600 px-3 py-2 text-sm font-medium transition duration-300">Clientes</a>
+                    <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-medium transition duration-300">Contacto</a>
+                </div>
+                <div class="mr-2 flex items-center md:hidden">
+                    <button id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-blue-600 focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#services" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-blue-600 transition duration-300">Servicios</a>
+                <a href="#testimonials" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-blue-600 transition duration-300">Clientes</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-white bg-blue-600 hover:bg-blue-700 transition duration-300">Contacto</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero-gradient pt-24 pb-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:grid lg:grid-cols-2 lg:gap-8 items-center">
+                <div class="text-white">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4 leading-tight">Tu Base de Datos, <span class="text-blue-200">Más Rápida y Confiable</span></h1>
+                    <p class="text-xl mb-8 text-blue-100">Expertos en optimización, migración y mantenimiento de bases de datos para empresas de todos los tamaños.</p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <a href="#contact" class="bg-white hover:bg-blue-100 text-blue-600 font-bold py-3 px-6 rounded-lg text-center transition duration-300 transform hover:scale-105">Contáctanos</a>
+                        <a href="#services" class="border-2 border-white hover:border-blue-300 text-white font-bold py-3 px-6 rounded-lg text-center transition duration-300 transform hover:scale-105">Ver Servicios</a>
+                    </div>
+                </div>
+                <div class="hidden lg:block mt-10 lg:mt-0">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="Database illustration" class="rounded-lg shadow-2xl transform rotate-1 hover:rotate-0 transition duration-500">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="progress-bar"></div>
+
+    <!-- Stats Section -->
+    <div class="bg-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-8 text-center">
+                <div class="bg-blue-50 p-6 rounded-xl shadow-sm hover:shadow-md transition duration-300">
+                    <div class="text-blue-600 text-4xl font-bold mb-2">+85%</div>
+                    <div class="text-gray-600">Mejora en rendimiento de queries</div>
+                </div>
+                <div class="bg-blue-50 p-6 rounded-xl shadow-sm hover:shadow-md transition duration-300">
+                    <div class="text-blue-600 text-4xl font-bold mb-2">24/7</div>
+                    <div class="text-gray-600">Soporte para emergencias críticas</div>
+                </div>
+                <div class="bg-blue-50 p-6 rounded-xl shadow-sm hover:shadow-md transition duration-300">
+                    <div class="text-blue-600 text-4xl font-bold mb-2">100%</div>
+                    <div class="text-gray-600">Éxito en migraciones realizadas</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 bg-gray-50" style="scroll-margin-top: 100px;">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">Nuestros Servicios de Bases de Datos</h2>
+                <p class="mt-3 max-w-2xl mx-auto text-xl text-gray-500 sm:mt-4">Soluciones personalizadas para optimizar el rendimiento y seguridad de tus datos</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
+                <!-- Service 1 -->
+                <div class="service-card bg-white rounded-xl overflow-hidden shadow-md transition duration-500">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-md bg-blue-100 text-blue-600">
+                                <i class="fas fa-bolt"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg leading-6 font-medium text-gray-900">Optimización de Queries</h3>
+                                <p class="mt-1 text-sm text-gray-500">Para PyMEs</p>
+                            </div>
+                        </div>
+                        <p class="mt-3 text-base text-gray-500">Identificamos y reescribimos consultas problemáticas para mejorar significativamente el rendimiento de tu base de datos.</p>
+                        <ul class="mt-4 space-y-2">
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-check-circle text-green-500"></i>
+                                </div>
+                                <p class="ml-2 text-sm text-gray-500">Análisis profundo de ejecución</p>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-check-circle text-green-500"></i>
+                                </div>
+                                <p class="ml-2 text-sm text-gray-500">Recomendaciones de índices</p>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-check-circle text-green-500"></i>
+                                </div>
+                                <p class="ml-2 text-sm text-gray-500">Documentación de cambios</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bg-gray-50 px-6 py-4">
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm font-medium text-blue-600">Modalidad: Por hora</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="service-card bg-white rounded-xl overflow-hidden shadow-md transition duration-500">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-md bg-blue-100 text-blue-600">
+                                <i class="fas fa-headset"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg leading-6 font-medium text-gray-900">Soporte DB Mensual</h3>
+                                <p class="mt-1 text-sm text-gray-500">Para Empresas Medianas</p>
+                            </div>
+                        </div>
+                        <p class="mt-3 text-base text-gray-500">Mantenimiento preventivo y soporte continuo para garantizar la estabilidad de tu base de datos.</p>
+                        <ul class="mt-4 space-y-2">
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-check-circle text-green-500"></i>
+                                </div>
+                                <p class="ml-2 text-sm text-gray-500">Monitoreo básico</p>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-check-circle text-green-500"></i>
+                                </div>
+                                <p class="ml-2 text-sm text-gray-500">Actualizaciones y parches</p>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-check-circle text-green-500"></i>
+                                </div>
+                                <p class="ml-2 text-sm text-gray-500">Consultas ilimitadas</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bg-gray-50 px-6 py-4">
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm font-medium text-blue-600">Modalidad: Mensual</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="service-card bg-white rounded-xl overflow-hidden shadow-md transition duration-500">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-md bg-blue-100 text-blue-600">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg leading-6 font-medium text-gray-900">Performance Tuning</h3>
+                                <p class="mt-1 text-sm text-gray-500">Para Empresas Grandes</p>
+                            </div>
+                        </div>
+                        <p class="mt-3 text-base text-gray-500">Optimización completa de la infraestructura de bases de datos con monitoreo avanzado.</p>
+                        <ul class="mt-4 space-y-2">
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-check-circle text-green-500"></i>
+                                </div>
+                                <p class="ml-2 text-sm text-gray-500">Configuración avanzada</p>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-check-circle text-green-500"></i>
+                                </div>
+                                <p class="ml-2 text-sm text-gray-500">Reportes de rendimiento</p>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-check-circle text-green-500"></i>
+                                </div>
+                                <p class="ml-2 text-sm text-gray-500">Planes de contingencia</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bg-gray-50 px-6 py-4">
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm font-medium text-blue-600">Modalidad: Por proyecto</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="service-card bg-white rounded-xl overflow-hidden shadow-md transition duration-500">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-md bg-blue-100 text-blue-600">
+                                <i class="fas fa-exchange-alt"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg leading-6 font-medium text-gray-900">Migración Oracle a PostgreSQL</h3>
+                                <p class="mt-1 text-sm text-gray-500">Para Proyectos Freelance</p>
+                            </div>
+                        </div>
+                        <p class="mt-3 text-base text-gray-500">Migración segura y eficiente de Oracle a PostgreSQL sin pérdida de datos ni funcionalidad.</p>
+                        <ul class="mt-4 space-y-2">
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-check-circle text-green-500"></i>
+                                </div>
+                                <p class="ml-2 text-sm text-gray-500">Conversión de esquemas</p>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-check-circle text-green-500"></i>
+                                </div>
+                                <p class="ml-2 text-sm text-gray-500">Migración de datos</p>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-check-circle text-green-500"></i>
+                                </div>
+                                <p class="ml-2 text-sm text-gray-500">Optimización post-migración</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bg-gray-50 px-6 py-4">
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm font-medium text-blue-600">Modalidad: Por entregable</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">Nuestro Proceso de Trabajo</h2>
+                <p class="mt-3 max-w-2xl mx-auto text-xl text-gray-500 sm:mt-4">Metodología probada para garantizar resultados excepcionales</p>
+            </div>
+
+            <div class="relative">
+                <div class="hidden md:block absolute top-0 left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-gray-200"></div>
+                
+                <div class="relative grid gap-10">
+                    <!-- Step 1 -->
+                    <div class="pop-in flex flex-col md:flex-row items-center">
+                        <div class="flex-shrink-0 flex items-center justify-center h-16 w-16 rounded-full bg-blue-100 text-blue-600 border-4 border-white z-10">
+                            <span class="text-xl font-bold">1</span>
+                        </div>
+                        <div class="mt-4 md:mt-0 md:ml-6 md:mr-6 flex-1">
+                            <div class="flex-1 bg-gray-50 p-6 rounded-lg shadow-sm">
+                                <h3 class="text-lg font-medium text-gray-900">Evaluación Inicial</h3>
+                                <p class="mt-2 text-base text-gray-500">Analizamos tu base de datos actual para identificar cuellos de botella, consultas problemáticas y oportunidades de mejora.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="pop-in flex flex-col md:flex-row items-center">
+                        <div class="flex-shrink-0 flex items-center justify-center h-16 w-16 rounded-full bg-blue-100 text-blue-600 border-4 border-white z-10">
+                            <span class="text-xl font-bold">2</span>
+                        </div>
+                        <div class="mt-4 md:mt-0 md:ml-6 md:mr-6 flex-1">
+                            <div class="flex-1 bg-gray-50 p-6 rounded-lg shadow-sm">
+                                <h3 class="text-lg font-medium text-gray-900">Plan Personalizado</h3>
+                                <p class="mt-2 text-base text-gray-500">Creamos un plan detallado con recomendaciones específicas para tu caso, incluyendo estimación de tiempos y costos.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="pop-in flex flex-col md:flex-row items-center">
+                        <div class="flex-shrink-0 flex items-center justify-center h-16 w-16 rounded-full bg-blue-100 text-blue-600 border-4 border-white z-10">
+                            <span class="text-xl font-bold">3</span>
+                        </div>
+                        <div class="mt-4 md:mt-0 md:ml-6 md:mr-6 flex-1">
+                            <div class="flex-1 bg-gray-50 p-6 rounded-lg shadow-sm">
+                                <h3 class="text-lg font-medium text-gray-900">Implementación</h3>
+                                <p class="mt-2 text-base text-gray-500">Implementamos las mejoras en un entorno controlado, verificando el impacto positivo antes de llevarlo a producción.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="pop-in flex flex-col md:flex-row items-center">
+                        <div class="flex-shrink-0 flex items-center justify-center h-16 w-16 rounded-full bg-blue-100 text-blue-600 border-4 border-white z-10">
+                            <span class="text-xl font-bold">4</span>
+                        </div>
+                        <div class="mt-4 md:mt-0 md:ml-6 md:mr-6 flex-1">
+                            <div class="flex-1 bg-gray-50 p-6 rounded-lg shadow-sm">
+                                <h3 class="text-lg font-medium text-gray-900">Soporte Continuo</h3>
+                                <p class="mt-2 text-base text-gray-500">Ofrecemos seguimiento post-implementación para asegurar que todo funcione perfectamente y resolver cualquier duda.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technologies Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">Tecnologías que Utilizamos</h2>
+                <p class="mt-3 max-w-2xl mx-auto text-xl text-gray-500 sm:mt-4">Expertos en los principales motores de bases de datos del mercado</p>
+            </div>
+            <div class="grid md:grid-cols-4 gap-8 text-center">
+                <div class="p-6">
+                    <img src="https://www.postgresql.org/media/img/about/press/elephant.png" alt="PostgreSQL Logo" class="mx-auto h-16 mb-4" />
+                    <h3 class="text-xl font-medium text-gray-900 mb-2">PostgreSQL</h3>
+                    <p class="text-gray-600">Base de datos relacional de código abierto avanzada y escalable</p>
+                </div>
+                <div class="p-6">
+                    <img src="https://www.mysql.com/common/logos/logo-mysql-170x115.png" alt="MySQL Logo" class="mx-auto h-16 mb-4" />
+                    <h3 class="text-xl font-medium text-gray-900 mb-2">MySQL</h3>
+                    <p class="text-gray-600">Sistema de gestión de bases de datos relacional más popular</p>
+                </div>
+                <div class="p-6">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Oracle_logo.svg/512px-Oracle_logo.svg.png" alt="Oracle Logo" class="mx-auto h-16 mb-4" />
+                    <h3 class="text-xl font-medium text-gray-900 mb-2">Oracle</h3>
+                    <p class="text-gray-600">Solución empresarial para gestión de datos compleja</p>
+                </div>
+                <div class="p-6">
+                    <i class="fab fa-microsoft text-6xl text-blue-500 mb-4"></i>
+                    <h3 class="text-xl font-medium text-gray-900 mb-2">SQL Server</h3>
+                    <p class="text-gray-600">Motor de base de datos desarrollado por Microsoft</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-16 bg-blue-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">Lo Que Dicen Nuestros Clientes</h2>
+                <p class="mt-3 max-w-2xl mx-auto text-xl text-gray-500 sm:mt-4">Empresas que han mejorado su rendimiento con nuestros servicios</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="flex-shrink-0">
+                            <img class="h-12 w-12 rounded-full" src="https://randomuser.me/api/portraits/women/42.jpg" alt="Testimonial">
+                        </div>
+                        <div class="ml-4">
+                            <h3 class="text-lg font-medium text-gray-900">María Gómez</h3>
+                            <p class="text-gray-500">CTO, RetailTech</p>
+                        </div>
+                    </div>
+                    <div class="text-gray-600 italic">
+                        <p>"Las optimizaciones implementadas redujeron nuestros tiempos de consulta en un 80%. Nuestra aplicación ahora es mucho más rápida y los usuarios lo notan."</p>
+                    </div>
+                    <div class="mt-4 flex text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star ml-1"></i>
+                        <i class="fas fa-star ml-1"></i>
+                        <i class="fas fa-star ml-1"></i>
+                        <i class="fas fa-star ml-1"></i>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="flex-shrink-0">
+                            <img class="h-12 w-12 rounded-full" src="https://randomuser.me/api/portraits/men/32.jpg" alt="Testimonial">
+                        </div>
+                        <div class="ml-4">
+                            <h3 class="text-lg font-medium text-gray-900">Carlos Rivas</h3>
+                            <p class="text-gray-500">Director TI, LogiCorp</p>
+                        </div>
+                    </div>
+                    <div class="text-gray-600 italic">
+                        <p>"El soporte mensual ha sido invaluable para nuestra operación. Han resuelto problemas antes de que afecten a nuestros usuarios y nos dan mucha tranquilidad."</p>
+                    </div>
+                    <div class="mt-4 flex text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star ml-1"></i>
+                        <i class="fas fa-star ml-1"></i>
+                        <i class="fas fa-star ml-1"></i>
+                        <i class="fas fa-star ml-1"></i>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="flex-shrink-0">
+                            <img class="h-12 w-12 rounded-full" src="https://randomuser.me/api/portraits/men/75.jpg" alt="Testimonial">
+                        </div>
+                        <div class="ml-4">
+                            <h3 class="text-lg font-medium text-gray-900">Andrés Fernández</h3>
+                            <p class="text-gray-500">Gerente de Proyectos, HealthData</p>
+                        </div>
+                    </div>
+                    <div class="text-gray-600 italic">
+                        <p>"La migración de Oracle a PostgreSQL fue impecable. Cumplieron con todos los entregables en tiempo y sin un solo error. ¡Altamente recomendados!"</p>
+                    </div>
+                    <div class="mt-4 flex text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star ml-1"></i>
+                        <i class="fas fa-star ml-1"></i>
+                        <i class="fas fa-star ml-1"></i>
+                        <i class="fas fa-star ml-1"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-blue-600 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-extrabold sm:text-4xl mb-6">¿Listo para Optimizar tu Base de Datos?</h2>
+            <p class="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">Contáctanos hoy mismo para una consulta gratuita y descubre cómo podemos mejorar el rendimiento de tu sistema.</p>
+            <a href="#contact" class="bg-white hover:bg-gray-100 text-blue-600 font-bold py-3 px-8 rounded-lg text-lg inline-block transition duration-300 transform hover:scale-105">Solicitar Consulta</a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">Contáctanos</h2>
+                <p class="mt-3 max-w-2xl mx-auto text-xl text-gray-500 sm:mt-4">Completa el formulario y nos pondremos en contacto contigo en menos de 24 horas</p>
+            </div>
+
+            <div class="bg-white shadow-xl rounded-lg overflow-hidden">
+                <div class="md:flex">
+                    <div class="md:w-1/2 bg-gray-50 p-8">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6">Información de Contacto</h3>
+                        
+                        <div class="flex items-start mb-6">
+                            <div class="flex-shrink-0 h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-medium text-gray-900">Oficina Principal</h4>
+                                <p class="mt-1 text-gray-600">Ramallo, Provincia de Buenos Aires, Argentina</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start mb-6">
+                            <div class="flex-shrink-0 h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-medium text-gray-900">Correo Electrónico</h4>
+                                <p class="mt-1 text-gray-600">contacto@jinwoconsulting.com</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-medium text-gray-900">Teléfono</h4>
+                                <p class="mt-1 text-gray-600">+54 3407511793</p>
+                            </div>
+                        </div>
+
+                        <div class="mt-12">
+                            <h3 class="text-2xl font-bold text-gray-900 mb-4">Horario de Atención</h3>
+                            <p class="text-gray-600 mb-2">Lunes a Viernes: 12:00 PM - 6:00 PM</p>
+                            <p class="text-gray-600">Soporte de emergencia 24/7 disponible para clientes</p>
+                        </div>
+                    </div>
+
+                    <div class="md:w-1/2 p-8">
+                        <form id="contactForm" class="space-y-6">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-gray-700">Nombre Completo</label>
+                                <input type="text" id="name" name="name" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                            </div>
+
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700">Correo Electrónico</label>
+                                <input type="email" id="email" name="email" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                            </div>
+
+                            <div>
+                                <label for="company" class="block text-sm font-medium text-gray-700">Empresa</label>
+                                <input type="text" id="company" name="company" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                            </div>
+
+                            <div>
+                                <label for="service" class="block text-sm font-medium text-gray-700">Servicio de Interés</label>
+                                <select id="service" name="service" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                                    <option value="">Selecciona un servicio</option>
+                                    <option value="optimization">Optimización de Queries</option>
+                                    <option value="support">Soporte DB Mensual</option>
+                                    <option value="performance">Performance Tuning</option>
+                                    <option value="migration">Migración Oracle a PostgreSQL</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label for="message" class="block text-sm font-medium text-gray-700">Mensaje</label>
+                                <textarea id="message" name="message" rows="4" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500"></textarea>
+                            </div>
+
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <input id="privacy" name="privacy" type="checkbox" class="focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300 rounded">
+                                </div>
+                                <div class="ml-3">
+                                    <label for="privacy" class="text-sm text-gray-700">Acepto la <a href="#" class="text-blue-600 hover:text-blue-500">Política de Privacidad</a></label>
+                                </div>
+                            </div>
+
+                            <div>
+                                <button type="submit" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-300 transform hover:scale-105">
+                                    Enviar Mensaje
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Jinwo Consulting</h3>
+                    <p class="text-gray-400 text-sm">Consultora especializada en optimización de bases de datos, ubicada en Ramallo, Provincia de Buenos Aires.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Servicios</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition duration-300 text-sm">Optimización de Queries</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition duration-300 text-sm">Soporte DB Mensual</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition duration-300 text-sm">Performance Tuning</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition duration-300 text-sm">Migración de Bases de Datos</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Empresa</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300 text-sm">Sobre Nosotros</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300 text-sm">Equipo</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300 text-sm">Clientes</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300 text-sm">Blog</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Legal</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300 text-sm">Términos y Condiciones</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300 text-sm">Política de Privacidad</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300 text-sm">Política de Cookies</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-12 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm">© 2023 Jinwo Consulting. Todos los derechos reservados.</p>
+                <div class="mt-4 md:mt-0 flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Animate progress bar on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const progressBar = document.querySelector('.progress-bar');
+            
+            window.addEventListener('scroll', function() {
+                const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+                const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrolled = (scrollTop / scrollHeight) * 100;
+                progressBar.style.width = scrolled + '%';
+            });
+
+            // Animate elements on scroll
+            const animateOnScroll = function() {
+                const elements = document.querySelectorAll('.pop-in');
+                
+                elements.forEach(element => {
+                    const elementPosition = element.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+                    
+                    if (elementPosition < windowHeight - 100) {
+                        element.style.opacity = 1;
+                        element.style.transform = 'scale(1)';
+                    }
+                });
+            };
+
+            // Set initial state
+            document.querySelectorAll('.pop-in').forEach(el => {
+                el.style.opacity = 0;
+                el.style.transform = 'scale(0.8)';
+            });
+
+            window.addEventListener('scroll', animateOnScroll);
+            animateOnScroll(); // Run once on load
+
+            // Form submission
+            document.getElementById('contactForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('¡Gracias por tu mensaje! Nos pondremos en contacto contigo pronto.');
+                this.reset();
+            });
+        });
+    </script>
+</body>
+</html>
