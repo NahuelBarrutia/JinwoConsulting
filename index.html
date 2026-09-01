@@ -38,6 +38,7 @@
 
 *{box-sizing:border-box;}
 html{scroll-behavior:smooth;}
+html,body{overflow-x:hidden;}
 body{
   margin:0;
   font-family:var(--font-body);
@@ -300,14 +301,15 @@ button{font-family:inherit;}
   overflow:hidden;
 }
 .query-line .kw{color:#3D7BFF;}
-.query-line span{
+.query-line .type-anim{
   display:inline-block;
   overflow:hidden;
   white-space:nowrap;
+  vertical-align:top;
   width:0;
-  animation:type 2.2s steps(46,end) .6s forwards;
+  animation:type 2.2s steps(32,end) .6s forwards;
 }
-@keyframes type{to{width:44ch;}}
+@keyframes type{to{width:32ch;}}
 .cursor{
   display:inline-block;
   width:7px;height:1em;
@@ -602,6 +604,26 @@ button{font-family:inherit;}
 .about__tags{margin-top:20px;display:flex;flex-wrap:wrap;gap:8px;}
 @media (max-width:700px){.about__grid{grid-template-columns:1fr;}}
 
+.timeline{margin-top:56px;}
+.timeline h3{font-size:1.05rem;margin-bottom:24px;}
+.timeline__item{
+  display:grid;
+  grid-template-columns:170px 1fr;
+  gap:24px;
+  padding:22px 0;
+  border-top:1px solid var(--line);
+}
+.timeline__item:last-child{border-bottom:1px solid var(--line);}
+.timeline__date{
+  font-family:var(--font-mono);
+  font-size:0.8rem;
+  color:var(--slate-soft);
+}
+.timeline__role h4{font-size:1rem;color:var(--ink);margin-bottom:2px;}
+.timeline__role .company{font-size:0.9rem;color:var(--blue);margin-bottom:8px;display:block;}
+.timeline__role p{font-size:0.92rem;color:var(--slate-soft);max-width:62ch;}
+@media (max-width:700px){.timeline__item{grid-template-columns:1fr;gap:8px;}}
+
 /* ===== Contact ===== */
 .contact{background:var(--ink);color:#fff;}
 .contact__grid{
@@ -741,7 +763,7 @@ button{font-family:inherit;}
           <span class="console__file">diagnostico.sql</span>
         </div>
         <div class="console__body">
-          <div class="query-line"><span class="kw">SELECT</span> id, email, estado <span class="kw">FROM</span> clientes<br><span class="kw">WHERE</span> <span>duplicado = 1 OR estado IS NULL;</span><span class="cursor"></span></div>
+          <div class="query-line"><span class="kw">SELECT</span> id, email, estado <span class="kw">FROM</span> clientes<br><span class="kw">WHERE</span> <span class="type-anim">duplicado = 1 OR estado IS NULL;</span><span class="cursor"></span></div>
           <div class="diagnostics">
             <div>
               <h4>Detectado</h4>
@@ -994,12 +1016,50 @@ button{font-family:inherit;}
       <div class="about__body">
         <p>Trabajo en soluciones de datos y bases de datos: optimización de rendimiento, migración entre motores, limpieza y control de calidad de datos, automatización de procesos y desarrollo de herramientas para consultar información.</p>
         <p>Los dos casos de esta página son proyectos reales en los que trabajé, no ejemplos genéricos. Mi enfoque es entender primero el problema de negocio detrás de los datos, y después definir la solución técnica.</p>
+        <p>Soy DBA y desarrollador SQL con 4 años de experiencia, especializado en Oracle, MySQL, PostgreSQL y PL/SQL. En este tiempo trabajé en diseño, mantenimiento y optimización de bases de datos, cuidando rendimiento, integridad y escalabilidad en entornos productivos. Soy Analista en Sistemas, graduado en la Universidad Abierta Interamericana (UAI), y participé en proyectos de los sectores de seguros, consultoría tecnológica y gobierno.</p>
+        <p>Además de mi trabajo en relación de dependencia, dirijo Jinwo Consulting, desde donde ayudo a empresas a migrar y optimizar grandes volúmenes de datos, mejorar tiempos de consulta y automatizar reportes. Estoy abierto a proyectos freelance y a oportunidades laborales de alto impacto.</p>
         <div class="about__tags">
           <span class="mono-tag">SQL</span>
           <span class="mono-tag">PL/SQL</span>
           <span class="mono-tag">Oracle</span>
           <span class="mono-tag">Migración de datos</span>
           <span class="mono-tag">Data Quality</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline">
+      <h3>Experiencia</h3>
+      <div class="timeline__item">
+        <div class="timeline__date">Nov. 2025 — actualidad</div>
+        <div class="timeline__role">
+          <h4>Analista y Desarrollador de PL/SQL</h4>
+          <span class="company">Santander</span>
+          <p>Desarrollo, optimización y refactorización de paquetes PL/SQL en Oracle, análisis de impacto y performance de consultas, y despliegue de scripts en entornos Linux para dos áreas clave del negocio.</p>
+        </div>
+      </div>
+      <div class="timeline__item">
+        <div class="timeline__date">Nov. 2024 — nov. 2025</div>
+        <div class="timeline__role">
+          <h4>Administrador de Bases de Datos Oracle, MySQL y PostgreSQL</h4>
+          <span class="company">Municipalidad de San Nicolás de los Arroyos</span>
+          <p>Gestión de usuarios, implementación de clústeres, backups y creación de esquemas de bases de datos, migraciones y tareas de mantenimiento sobre los datos.</p>
+        </div>
+      </div>
+      <div class="timeline__item">
+        <div class="timeline__date">Ago. 2023 — sept. 2024</div>
+        <div class="timeline__role">
+          <h4>Desarrollador de PL/SQL</h4>
+          <span class="company">Servicios y Consultoría</span>
+          <p>Soluciones para distintas municipalidades y empresas sobre carga y actualización de datos de clientes y gestión de información impositiva.</p>
+        </div>
+      </div>
+      <div class="timeline__item">
+        <div class="timeline__date">Dic. 2022 — ago. 2023</div>
+        <div class="timeline__role">
+          <h4>Desarrollador de PL/SQL</h4>
+          <span class="company">La Segunda Seguros</span>
+          <p>Desarrollo de pantallas y paquetes para atender requerimientos de información y actualizaciones de datos del negocio.</p>
         </div>
       </div>
     </div>
