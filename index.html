@@ -1,718 +1,1133 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jinwo Consulting | Expertos en Optimización de Bases de Datos</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/brands.min.css">
-    <style>
-        .hero-gradient {
-            background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 50%, #3b82f6 100%);
-        }
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        }
-        .pop-in {
-            animation: popIn 0.5s ease-out forwards;
-        }
-        @keyframes popIn {
-            0% { opacity: 0; transform: scale(0.8); }
-            100% { opacity: 1; transform: scale(1); }
-        }
-        .progress-bar {
-            height: 4px;
-            background-color: #2563eb;
-            width: 0%;
-            transition: width 2s ease-in-out;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jinwo Consulting | Soluciones de Datos y Bases de Datos para Empresas</title>
+<meta name="description" content="Optimización de bases de datos, migración de datos, data cleaning y automatización de procesos. Consultoría en Oracle, PostgreSQL, MySQL y SQL Server con proyectos reales de más de 2 millones de registros.">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Jinwo Consulting | Soluciones de Datos y Bases de Datos para Empresas">
+<meta property="og:description" content="Optimización, migración y calidad de datos para empresas que necesitan más orden, rendimiento y control sobre su información.">
+<meta property="og:locale" content="es_AR">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230A0E1A'/%3E%3Cellipse cx='32' cy='18' rx='16' ry='7' fill='none' stroke='%232C5FE0' stroke-width='3'/%3E%3Cpath d='M16 18v14c0 3.9 7.2 7 16 7s16-3.1 16-7V18' fill='none' stroke='%232C5FE0' stroke-width='3'/%3E%3Cpath d='M16 32v14c0 3.9 7.2 7 16 7s16-3.1 16-7V32' fill='none' stroke='%233D7BFF' stroke-width='3'/%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+:root{
+  --ink:#0A0E1A;
+  --navy:#101F38;
+  --blue:#2C5FE0;
+  --blue-bright:#3D7BFF;
+  --blue-soft:#E9EFFC;
+  --paper:#F5F6F8;
+  --white:#FFFFFF;
+  --slate:#333B47;
+  --slate-soft:#69707C;
+  --line:#DEE2E8;
+  --line-dark:#233252;
+  --font-display:'Space Grotesk', sans-serif;
+  --font-body:'IBM Plex Sans', sans-serif;
+  --font-mono:'IBM Plex Mono', monospace;
+}
+
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  font-family:var(--font-body);
+  color:var(--slate);
+  background:var(--white);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3{
+  font-family:var(--font-display);
+  color:var(--ink);
+  margin:0;
+  line-height:1.15;
+  letter-spacing:-0.01em;
+}
+p{margin:0;}
+a{color:inherit;text-decoration:none;}
+ul{margin:0;padding:0;list-style:none;}
+img,svg{display:block;max-width:100%;}
+button{font-family:inherit;}
+
+:focus-visible{outline:2px solid var(--blue-bright);outline-offset:3px;}
+
+.container{
+  max-width:1180px;
+  margin:0 auto;
+  padding:0 24px;
+}
+
+.section{padding:96px 0;}
+.section--tight{padding:72px 0;}
+.section-head{
+  max-width:640px;
+  margin-bottom:52px;
+}
+.section-head h2{font-size:clamp(1.7rem,3vw,2.3rem);}
+.section-head p{
+  margin-top:14px;
+  font-size:1.05rem;
+  color:var(--slate-soft);
+  max-width:56ch;
+}
+
+.mono-tag{
+  font-family:var(--font-mono);
+  font-size:0.72rem;
+  color:var(--blue);
+  background:var(--blue-soft);
+  padding:3px 8px;
+  border-radius:3px;
+  display:inline-block;
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  padding:13px 26px;
+  border-radius:6px;
+  font-size:0.95rem;
+  font-weight:600;
+  font-family:var(--font-body);
+  border:1px solid transparent;
+  cursor:pointer;
+  transition:background .18s ease, color .18s ease, border-color .18s ease;
+}
+.btn--primary{
+  background:var(--blue);
+  color:var(--white);
+}
+.btn--primary:hover{background:var(--blue-bright);}
+.btn--ghost{
+  background:transparent;
+  color:var(--white);
+  border-color:rgba(255,255,255,0.35);
+}
+.btn--ghost:hover{border-color:#fff;}
+.btn--outline{
+  background:transparent;
+  color:var(--blue);
+  border-color:var(--blue);
+}
+.btn--outline:hover{background:var(--blue-soft);}
+.btn--block{width:100%;}
+
+/* ===== Nav ===== */
+.nav{
+  position:fixed;
+  top:0;left:0;right:0;
+  z-index:100;
+  padding:18px 0;
+  transition:background .25s ease, padding .25s ease, border-color .25s ease;
+  border-bottom:1px solid transparent;
+}
+.nav.is-scrolled{
+  background:rgba(10,14,26,0.92);
+  backdrop-filter:blur(8px);
+  padding:12px 0;
+  border-color:var(--line-dark);
+}
+.nav__inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  color:var(--white);
+  font-family:var(--font-display);
+  font-weight:600;
+  font-size:1.05rem;
+}
+.brand svg{width:26px;height:26px;flex-shrink:0;}
+.brand span small{
+  display:block;
+  font-family:var(--font-body);
+  font-weight:400;
+  font-size:0.7rem;
+  color:#9FB2D9;
+  letter-spacing:0.02em;
+}
+.nav__links{
+  display:flex;
+  align-items:center;
+  gap:32px;
+}
+.nav__links a{
+  color:#D7DEEC;
+  font-size:0.92rem;
+  transition:color .18s ease;
+}
+.nav__links a:hover{color:#fff;}
+.nav__cta{display:flex;align-items:center;gap:18px;}
+.nav__toggle{
+  display:none;
+  background:none;
+  border:none;
+  color:#fff;
+  font-size:1.3rem;
+  cursor:pointer;
+}
+.mobile-menu{
+  display:none;
+  position:fixed;
+  top:0;right:0;bottom:0;left:0;
+  background:var(--ink);
+  z-index:99;
+  padding:96px 28px 40px;
+}
+.mobile-menu.is-open{display:block;}
+.mobile-menu ul{display:flex;flex-direction:column;gap:6px;}
+.mobile-menu a{
+  display:block;
+  color:#fff;
+  font-family:var(--font-display);
+  font-size:1.4rem;
+  padding:14px 0;
+  border-bottom:1px solid var(--line-dark);
+}
+.mobile-menu .btn{margin-top:28px;}
+.mobile-close{
+  position:absolute;
+  top:22px;right:24px;
+  background:none;border:none;color:#fff;font-size:1.4rem;cursor:pointer;
+}
+
+@media (max-width:880px){
+  .nav__links,.nav__cta .btn{display:none;}
+  .nav__toggle{display:block;}
+}
+
+/* ===== Hero ===== */
+.hero{
+  background:var(--ink);
+  background-image:
+    radial-gradient(circle at 15% 20%, rgba(44,95,224,0.16), transparent 40%),
+    radial-gradient(circle at 85% 75%, rgba(61,123,255,0.12), transparent 45%);
+  padding:168px 0 100px;
+  color:#fff;
+  overflow:hidden;
+}
+.hero__inner{
+  display:grid;
+  grid-template-columns:1.05fr 0.95fr;
+  gap:64px;
+  align-items:center;
+}
+.hero h1{
+  font-size:clamp(2.3rem,4.4vw,3.4rem);
+  color:#fff;
+  opacity:0;
+  transform:translateY(14px);
+  animation:heroIn .7s ease forwards;
+}
+.hero__subtitle{
+  margin-top:22px;
+  font-size:1.14rem;
+  color:#B9C4DC;
+  max-width:46ch;
+  opacity:0;
+  transform:translateY(14px);
+  animation:heroIn .7s ease .12s forwards;
+}
+.hero__ctas{
+  margin-top:34px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:14px;
+  opacity:0;
+  transform:translateY(14px);
+  animation:heroIn .7s ease .24s forwards;
+}
+.hero__visual{
+  opacity:0;
+  transform:translateY(14px);
+  animation:heroIn .7s ease .18s forwards;
+}
+@keyframes heroIn{to{opacity:1;transform:translateY(0);}}
+@media (prefers-reduced-motion:reduce){
+  .hero h1,.hero__subtitle,.hero__ctas,.hero__visual{animation:none;opacity:1;transform:none;}
+  .cursor{animation:none !important;}
+  .query-line span{animation:none !important;width:auto !important;}
+}
+
+.console{
+  background:#0D1730;
+  border:1px solid var(--line-dark);
+  border-radius:10px;
+  overflow:hidden;
+  box-shadow:0 30px 60px -20px rgba(0,0,0,0.5);
+}
+.console__bar{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  padding:12px 16px;
+  background:#0A1226;
+  border-bottom:1px solid var(--line-dark);
+}
+.console__dot{width:10px;height:10px;border-radius:50%;background:#2A3958;}
+.console__file{
+  margin-left:8px;
+  font-family:var(--font-mono);
+  font-size:0.75rem;
+  color:#6E7EA3;
+}
+.console__body{padding:22px 20px;}
+.query-line{
+  font-family:var(--font-mono);
+  font-size:0.86rem;
+  color:#8FB4FF;
+  white-space:pre;
+  overflow:hidden;
+}
+.query-line .kw{color:#3D7BFF;}
+.query-line span{
+  display:inline-block;
+  overflow:hidden;
+  white-space:nowrap;
+  width:0;
+  animation:type 2.2s steps(46,end) .6s forwards;
+}
+@keyframes type{to{width:44ch;}}
+.cursor{
+  display:inline-block;
+  width:7px;height:1em;
+  background:#3D7BFF;
+  vertical-align:-2px;
+  margin-left:3px;
+  animation:blink 1s step-end infinite;
+}
+@keyframes blink{50%{opacity:0;}}
+
+.diagnostics{
+  margin-top:22px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+  border-top:1px solid var(--line-dark);
+  padding-top:18px;
+}
+.diagnostics h4{
+  font-family:var(--font-mono);
+  font-size:0.7rem;
+  color:#6E7EA3;
+  font-weight:500;
+  margin-bottom:10px;
+}
+.diag-item{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  font-size:0.82rem;
+  color:#C4CFE6;
+  padding:6px 0;
+}
+.diag-item i{font-size:0.7rem;width:14px;}
+.diag-item--issue i{color:#F0A05A;}
+.diag-item--fixed i{color:#3ED598;}
+
+/* ===== Problems ===== */
+.problems{background:var(--paper);}
+.problems__grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:1px;
+  background:var(--line);
+  border:1px solid var(--line);
+}
+.problem-item{
+  background:var(--paper);
+  padding:26px 24px;
+  display:flex;
+  gap:14px;
+  align-items:flex-start;
+}
+.problem-item i{
+  color:var(--blue);
+  font-size:1.05rem;
+  margin-top:3px;
+  flex-shrink:0;
+}
+.problem-item p{font-size:0.95rem;color:var(--slate);}
+@media (max-width:880px){.problems__grid{grid-template-columns:1fr 1fr;}}
+@media (max-width:560px){.problems__grid{grid-template-columns:1fr;}}
+
+/* ===== Services ===== */
+.service-row{
+  display:grid;
+  grid-template-columns:140px 1fr;
+  gap:32px;
+  padding:32px 0;
+  border-top:1px solid var(--line);
+}
+.service-row:last-of-type{border-bottom:1px solid var(--line);}
+.service-row__head{display:flex;flex-direction:column;gap:10px;}
+.service-row h3{font-size:1.15rem;}
+.service-cols{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:24px;
+}
+.service-cols div span{
+  display:block;
+  font-family:var(--font-mono);
+  font-size:0.68rem;
+  color:var(--slate-soft);
+  margin-bottom:6px;
+}
+.service-cols div p{font-size:0.92rem;color:var(--slate);}
+@media (max-width:880px){
+  .service-row{grid-template-columns:1fr;gap:14px;}
+  .service-cols{grid-template-columns:1fr;gap:14px;}
+}
+.cta-banner{
+  margin-top:48px;
+  background:var(--ink);
+  border-radius:10px;
+  padding:40px 44px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+  flex-wrap:wrap;
+}
+.cta-banner h3{color:#fff;font-size:1.35rem;max-width:32ch;}
+.cta-banner p{color:#AAB6CE;margin-top:8px;font-size:0.95rem;}
+
+/* ===== Cases ===== */
+.cases{background:var(--paper);}
+.case-card{
+  background:var(--white);
+  border:1px solid var(--line);
+  border-top:3px solid var(--blue);
+  border-radius:6px;
+  padding:40px;
+  margin-bottom:28px;
+}
+.case-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:20px;
+  flex-wrap:wrap;
+  margin-bottom:16px;
+}
+.case-head h3{font-size:1.4rem;max-width:32ch;}
+.case-context{font-size:1rem;color:var(--slate-soft);max-width:70ch;margin-bottom:32px;}
+
+/* Case 1 bars */
+.bars{display:grid;grid-template-columns:1fr 1fr;gap:36px;}
+.bar-group h4{
+  font-family:var(--font-mono);
+  font-size:0.75rem;
+  color:var(--slate-soft);
+  margin-bottom:14px;
+}
+.bar-row{margin-bottom:14px;}
+.bar-row__label{
+  display:flex;
+  justify-content:space-between;
+  font-size:0.86rem;
+  margin-bottom:6px;
+  color:var(--slate);
+}
+.bar-row__label strong{font-family:var(--font-mono);color:var(--ink);}
+.bar-track{
+  height:10px;
+  background:var(--paper);
+  border-radius:2px;
+  overflow:hidden;
+}
+.bar-fill{height:100%;border-radius:2px;}
+.bar-fill--good{background:var(--blue);}
+.bar-fill--bad{background:#D8DEE9;}
+@media (max-width:700px){.bars{grid-template-columns:1fr;}}
+
+/* Case 2 pipeline */
+.pipeline{
+  display:flex;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:0;
+}
+.pipeline__step{
+  font-family:var(--font-mono);
+  font-size:0.82rem;
+  background:var(--paper);
+  border:1px solid var(--line);
+  border-radius:5px;
+  padding:12px 16px;
+  color:var(--ink);
+  text-align:center;
+}
+.pipeline__arrow{
+  color:var(--blue);
+  font-size:0.9rem;
+  padding:0 12px;
+}
+@media (max-width:880px){
+  .pipeline{flex-direction:column;align-items:stretch;}
+  .pipeline__step{width:100%;}
+  .pipeline__arrow{transform:rotate(90deg);padding:6px 0;align-self:center;}
+}
+
+.case-result{
+  margin-top:28px;
+  padding-top:24px;
+  border-top:1px solid var(--line);
+  font-size:0.98rem;
+  color:var(--slate);
+  max-width:70ch;
+}
+.case-link{
+  margin-top:20px;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  font-size:0.9rem;
+  font-weight:600;
+  color:var(--blue);
+}
+.case-link i{font-size:1.05rem;}
+
+/* ===== Credibility ===== */
+.credibility__grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:48px;
+  align-items:start;
+}
+.cred-highlight{
+  background:var(--ink);
+  color:#fff;
+  border-radius:8px;
+  padding:36px;
+}
+.cred-highlight .num{
+  font-family:var(--font-display);
+  font-size:2.6rem;
+  color:var(--blue-bright);
+}
+.cred-highlight p{margin-top:8px;color:#B9C4DC;font-size:0.92rem;}
+.cred-list li{
+  display:flex;
+  gap:10px;
+  padding:12px 0;
+  border-bottom:1px solid var(--line);
+  font-size:0.96rem;
+}
+.cred-list li i{color:var(--blue);margin-top:3px;}
+@media (max-width:800px){.credibility__grid{grid-template-columns:1fr;}}
+
+/* ===== Process ===== */
+.process__list{
+  display:grid;
+  gap:0;
+}
+.process__step{
+  display:grid;
+  grid-template-columns:70px 1fr;
+  gap:24px;
+  padding:26px 0;
+  border-top:1px solid var(--line);
+}
+.process__step:last-child{border-bottom:1px solid var(--line);}
+.process__num{
+  font-family:var(--font-mono);
+  font-size:1.3rem;
+  color:var(--blue);
+}
+.process__step h3{font-size:1.1rem;margin-bottom:6px;}
+.process__step p{font-size:0.95rem;color:var(--slate-soft);max-width:60ch;}
+
+/* ===== Tech ===== */
+.tech__grid{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+}
+.tech-pill{
+  font-family:var(--font-mono);
+  font-size:0.88rem;
+  border:1px solid var(--line);
+  border-radius:5px;
+  padding:10px 18px;
+  color:var(--ink);
+}
+
+/* ===== About ===== */
+.about__grid{
+  display:grid;
+  grid-template-columns:200px 1fr;
+  gap:48px;
+  align-items:start;
+}
+.about__mark{
+  width:96px;height:96px;
+  border-radius:8px;
+  background:var(--ink);
+  color:#fff;
+  font-family:var(--font-display);
+  font-size:1.6rem;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.about__role{
+  margin-top:16px;
+  font-size:0.88rem;
+  color:var(--slate-soft);
+  line-height:1.5;
+}
+.about__body p{margin-bottom:16px;font-size:1.02rem;color:var(--slate);max-width:66ch;}
+.about__tags{margin-top:20px;display:flex;flex-wrap:wrap;gap:8px;}
+@media (max-width:700px){.about__grid{grid-template-columns:1fr;}}
+
+/* ===== Contact ===== */
+.contact{background:var(--ink);color:#fff;}
+.contact__grid{
+  display:grid;
+  grid-template-columns:0.9fr 1.1fr;
+  gap:56px;
+}
+.contact .section-head p{color:#B9C4DC;}
+.contact .section-head h2{color:#fff;}
+.contact-item{
+  display:flex;
+  gap:16px;
+  padding:18px 0;
+  border-bottom:1px solid var(--line-dark);
+}
+.contact-item i{color:var(--blue-bright);font-size:1.1rem;margin-top:3px;width:20px;}
+.contact-item h4{font-size:0.95rem;color:#fff;margin-bottom:4px;}
+.contact-item p{font-size:0.92rem;color:#AAB6CE;}
+.whatsapp-btn{
+  margin-top:24px;
+  background:#25D366;
+  color:#08331B;
+}
+.whatsapp-btn:hover{background:#1ebe5b;}
+
+.field{margin-bottom:18px;}
+.field label{
+  display:block;
+  font-size:0.85rem;
+  color:#C4CFE6;
+  margin-bottom:6px;
+}
+.field input,.field select,.field textarea{
+  width:100%;
+  padding:11px 13px;
+  border-radius:5px;
+  border:1px solid var(--line-dark);
+  background:#0D1730;
+  color:#fff;
+  font-family:var(--font-body);
+  font-size:0.95rem;
+}
+.field textarea{resize:vertical;}
+.field input:focus,.field select:focus,.field textarea:focus{
+  outline:none;
+  border-color:var(--blue-bright);
+}
+
+/* ===== Footer ===== */
+.footer{background:#080B14;color:#8A93A8;padding:56px 0 28px;}
+.footer__grid{
+  display:grid;
+  grid-template-columns:1.4fr 1fr 1fr;
+  gap:40px;
+  padding-bottom:36px;
+  border-bottom:1px solid #1B2338;
+}
+.footer h4{color:#fff;font-size:0.92rem;margin-bottom:14px;}
+.footer li{margin-bottom:8px;font-size:0.88rem;}
+.footer li a:hover{color:#fff;}
+.footer p{font-size:0.88rem;max-width:36ch;}
+.footer__brand{display:flex;align-items:center;gap:9px;color:#fff;font-family:var(--font-display);margin-bottom:14px;}
+.footer__brand svg{width:22px;height:22px;}
+.footer__bottom{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:16px;
+  padding-top:24px;
+  font-size:0.82rem;
+}
+.socials{display:flex;gap:16px;}
+.socials a{color:#8A93A8;font-size:1.05rem;}
+.socials a:hover{color:#fff;}
+@media (max-width:800px){.footer__grid{grid-template-columns:1fr 1fr;}}
+@media (max-width:520px){.footer__grid{grid-template-columns:1fr;}}
+</style>
 </head>
-<body class="font-sans antialiased text-gray-800">
-    <!-- Navigation -->
-    <nav class="bg-white shadow-lg fixed w-full z-10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16">
-                <div class="flex items-center">
-                    <div class="flex-shrink-0 flex items-center">
-                        <i class="fas fa-database text-blue-600 text-2xl mr-2"></i>
-                        <span class="text-xl font-bold text-blue-600">Jinwo Consulting</span>
-                    </div>
-                </div>
-                <div class="hidden md:ml-6 md:flex md:items-center md:space-x-8">
-                    <a href="#services" class="text-gray-900 hover:text-blue-600 px-3 py-2 text-sm font-medium transition duration-300">Servicios</a>
-                    <a href="#testimonials" class="text-gray-900 hover:text-blue-600 px-3 py-2 text-sm font-medium transition duration-300">Clientes</a>
-                    <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-medium transition duration-300">Contacto</a>
-                </div>
-                <div class="mr-2 flex items-center md:hidden">
-                    <button id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-blue-600 focus:outline-none">
-                        <i class="fas fa-bars text-xl"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-        <!-- Mobile menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
-            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="#services" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-blue-600 transition duration-300">Servicios</a>
-                <a href="#testimonials" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-blue-600 transition duration-300">Clientes</a>
-                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-white bg-blue-600 hover:bg-blue-700 transition duration-300">Contacto</a>
-            </div>
-        </div>
+<body>
+
+<!-- ===== Nav ===== -->
+<header class="nav" id="siteNav">
+  <div class="container nav__inner">
+    <a href="#top" class="brand" aria-label="Jinwo Consulting, inicio">
+      <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <ellipse cx="32" cy="16" rx="15" ry="6.5" stroke="#3D7BFF" stroke-width="3.5"/>
+        <path d="M17 16v14c0 3.6 6.7 6.5 15 6.5s15-2.9 15-6.5V16" stroke="#3D7BFF" stroke-width="3.5"/>
+        <path d="M17 30v14c0 3.6 6.7 6.5 15 6.5s15-2.9 15-6.5V30" stroke="#3D7BFF" stroke-width="3.5"/>
+      </svg>
+      <span>Jinwo Consulting<small>Soluciones de datos</small></span>
+    </a>
+    <nav class="nav__links" aria-label="Navegación principal">
+      <a href="#servicios">Servicios</a>
+      <a href="#casos">Casos</a>
+      <a href="#proceso">Proceso</a>
+      <a href="#sobre-mi">Sobre mí</a>
+      <a href="#contacto">Contacto</a>
     </nav>
-
-    <!-- Hero Section -->
-    <div class="hero-gradient pt-24 pb-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="lg:grid lg:grid-cols-2 lg:gap-8 items-center">
-                <div class="text-white">
-                    <h1 class="text-4xl md:text-5xl font-bold mb-4 leading-tight">Tu Base de Datos, <span class="text-blue-200">Más Rápida y Confiable</span></h1>
-                    <p class="text-xl mb-8 text-blue-100">Expertos en optimización, migración y mantenimiento de bases de datos para empresas de todos los tamaños.</p>
-                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-                        <a href="#contact" class="bg-white hover:bg-blue-100 text-blue-600 font-bold py-3 px-6 rounded-lg text-center transition duration-300 transform hover:scale-105">Contáctanos</a>
-                        <a href="#services" class="border-2 border-white hover:border-blue-300 text-white font-bold py-3 px-6 rounded-lg text-center transition duration-300 transform hover:scale-105">Ver Servicios</a>
-                    </div>
-                </div>
-                <div class="hidden lg:block mt-10 lg:mt-0">
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="Database illustration" class="rounded-lg shadow-2xl transform rotate-1 hover:rotate-0 transition duration-500">
-                </div>
-            </div>
-        </div>
+    <div class="nav__cta">
+      <a href="#contacto" class="btn btn--primary">Solicitar diagnóstico</a>
     </div>
-    <div class="progress-bar"></div>
+    <button class="nav__toggle" id="menuOpen" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileMenu">
+      <i class="fas fa-bars"></i>
+    </button>
+  </div>
+</header>
 
-    <!-- Stats Section -->
-    <div class="bg-white py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-3 gap-8 text-center">
-                <div class="bg-blue-50 p-6 rounded-xl shadow-sm hover:shadow-md transition duration-300">
-                    <div class="text-blue-600 text-4xl font-bold mb-2">+85%</div>
-                    <div class="text-gray-600">Mejora en rendimiento de queries</div>
-                </div>
-                <div class="bg-blue-50 p-6 rounded-xl shadow-sm hover:shadow-md transition duration-300">
-                    <div class="text-blue-600 text-4xl font-bold mb-2">24/7</div>
-                    <div class="text-gray-600">Soporte para emergencias críticas</div>
-                </div>
-                <div class="bg-blue-50 p-6 rounded-xl shadow-sm hover:shadow-md transition duration-300">
-                    <div class="text-blue-600 text-4xl font-bold mb-2">100%</div>
-                    <div class="text-gray-600">Éxito en migraciones realizadas</div>
-                </div>
-            </div>
-        </div>
-    </div>
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" id="menuClose" aria-label="Cerrar menú"><i class="fas fa-xmark"></i></button>
+  <ul>
+    <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#casos">Casos</a></li>
+    <li><a href="#proceso">Proceso</a></li>
+    <li><a href="#sobre-mi">Sobre mí</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+  </ul>
+  <a href="#contacto" class="btn btn--primary btn--block">Solicitar diagnóstico</a>
+</div>
 
-
-    <!-- Services Section -->
-    <section id="services" class="py-16 bg-gray-50" style="scroll-margin-top: 100px;">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">Nuestros Servicios de Bases de Datos</h2>
-                <p class="mt-3 max-w-2xl mx-auto text-xl text-gray-500 sm:mt-4">Soluciones personalizadas para optimizar el rendimiento y seguridad de tus datos</p>
-            </div>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
-                <!-- Service 1 -->
-                <div class="service-card bg-white rounded-xl overflow-hidden shadow-md transition duration-500">
-                    <div class="p-6">
-                        <div class="flex items-center mb-4">
-                            <div class="flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-md bg-blue-100 text-blue-600">
-                                <i class="fas fa-bolt"></i>
-                            </div>
-                            <div class="ml-4">
-                                <h3 class="text-lg leading-6 font-medium text-gray-900">Optimización de Queries</h3>
-                                <p class="mt-1 text-sm text-gray-500">Para PyMEs</p>
-                            </div>
-                        </div>
-                        <p class="mt-3 text-base text-gray-500">Identificamos y reescribimos consultas problemáticas para mejorar significativamente el rendimiento de tu base de datos.</p>
-                        <ul class="mt-4 space-y-2">
-                            <li class="flex items-start">
-                                <div class="flex-shrink-0">
-                                    <i class="fas fa-check-circle text-green-500"></i>
-                                </div>
-                                <p class="ml-2 text-sm text-gray-500">Análisis profundo de ejecución</p>
-                            </li>
-                            <li class="flex items-start">
-                                <div class="flex-shrink-0">
-                                    <i class="fas fa-check-circle text-green-500"></i>
-                                </div>
-                                <p class="ml-2 text-sm text-gray-500">Recomendaciones de índices</p>
-                            </li>
-                            <li class="flex items-start">
-                                <div class="flex-shrink-0">
-                                    <i class="fas fa-check-circle text-green-500"></i>
-                                </div>
-                                <p class="ml-2 text-sm text-gray-500">Documentación de cambios</p>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="bg-gray-50 px-6 py-4">
-                        <div class="flex items-center justify-between">
-                            <span class="text-sm font-medium text-blue-600">Modalidad: Por hora</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Service 2 -->
-                <div class="service-card bg-white rounded-xl overflow-hidden shadow-md transition duration-500">
-                    <div class="p-6">
-                        <div class="flex items-center mb-4">
-                            <div class="flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-md bg-blue-100 text-blue-600">
-                                <i class="fas fa-headset"></i>
-                            </div>
-                            <div class="ml-4">
-                                <h3 class="text-lg leading-6 font-medium text-gray-900">Soporte DB Mensual</h3>
-                                <p class="mt-1 text-sm text-gray-500">Para Empresas Medianas</p>
-                            </div>
-                        </div>
-                        <p class="mt-3 text-base text-gray-500">Mantenimiento preventivo y soporte continuo para garantizar la estabilidad de tu base de datos.</p>
-                        <ul class="mt-4 space-y-2">
-                            <li class="flex items-start">
-                                <div class="flex-shrink-0">
-                                    <i class="fas fa-check-circle text-green-500"></i>
-                                </div>
-                                <p class="ml-2 text-sm text-gray-500">Monitoreo básico</p>
-                            </li>
-                            <li class="flex items-start">
-                                <div class="flex-shrink-0">
-                                    <i class="fas fa-check-circle text-green-500"></i>
-                                </div>
-                                <p class="ml-2 text-sm text-gray-500">Actualizaciones y parches</p>
-                            </li>
-                            <li class="flex items-start">
-                                <div class="flex-shrink-0">
-                                    <i class="fas fa-check-circle text-green-500"></i>
-                                </div>
-                                <p class="ml-2 text-sm text-gray-500">Consultas ilimitadas</p>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="bg-gray-50 px-6 py-4">
-                        <div class="flex items-center justify-between">
-                            <span class="text-sm font-medium text-blue-600">Modalidad: Mensual</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Service 3 -->
-                <div class="service-card bg-white rounded-xl overflow-hidden shadow-md transition duration-500">
-                    <div class="p-6">
-                        <div class="flex items-center mb-4">
-                            <div class="flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-md bg-blue-100 text-blue-600">
-                                <i class="fas fa-chart-line"></i>
-                            </div>
-                            <div class="ml-4">
-                                <h3 class="text-lg leading-6 font-medium text-gray-900">Performance Tuning</h3>
-                                <p class="mt-1 text-sm text-gray-500">Para Empresas Grandes</p>
-                            </div>
-                        </div>
-                        <p class="mt-3 text-base text-gray-500">Optimización completa de la infraestructura de bases de datos con monitoreo avanzado.</p>
-                        <ul class="mt-4 space-y-2">
-                            <li class="flex items-start">
-                                <div class="flex-shrink-0">
-                                    <i class="fas fa-check-circle text-green-500"></i>
-                                </div>
-                                <p class="ml-2 text-sm text-gray-500">Configuración avanzada</p>
-                            </li>
-                            <li class="flex items-start">
-                                <div class="flex-shrink-0">
-                                    <i class="fas fa-check-circle text-green-500"></i>
-                                </div>
-                                <p class="ml-2 text-sm text-gray-500">Reportes de rendimiento</p>
-                            </li>
-                            <li class="flex items-start">
-                                <div class="flex-shrink-0">
-                                    <i class="fas fa-check-circle text-green-500"></i>
-                                </div>
-                                <p class="ml-2 text-sm text-gray-500">Planes de contingencia</p>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="bg-gray-50 px-6 py-4">
-                        <div class="flex items-center justify-between">
-                            <span class="text-sm font-medium text-blue-600">Modalidad: Por proyecto</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Service 4 -->
-                <div class="service-card bg-white rounded-xl overflow-hidden shadow-md transition duration-500">
-                    <div class="p-6">
-                        <div class="flex items-center mb-4">
-                            <div class="flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-md bg-blue-100 text-blue-600">
-                                <i class="fas fa-exchange-alt"></i>
-                            </div>
-                            <div class="ml-4">
-                                <h3 class="text-lg leading-6 font-medium text-gray-900">Migración de BD hacia otra</h3>
-                                <p class="mt-1 text-sm text-gray-500">Para Empresas o Proyectos Freelance</p>
-                            </div>
-                        </div>
-                        <p class="mt-3 text-base text-gray-500">Migración segura y eficiente BD sin pérdida de datos ni funcionalidad.</p>
-                        <ul class="mt-4 space-y-2">
-                            <li class="flex items-start">
-                                <div class="flex-shrink-0">
-                                    <i class="fas fa-check-circle text-green-500"></i>
-                                </div>
-                                <p class="ml-2 text-sm text-gray-500">Conversión de esquemas</p>
-                            </li>
-                            <li class="flex items-start">
-                                <div class="flex-shrink-0">
-                                    <i class="fas fa-check-circle text-green-500"></i>
-                                </div>
-                                <p class="ml-2 text-sm text-gray-500">Migración de datos</p>
-                            </li>
-                            <li class="flex items-start">
-                                <div class="flex-shrink-0">
-                                    <i class="fas fa-check-circle text-green-500"></i>
-                                </div>
-                                <p class="ml-2 text-sm text-gray-500">Optimización post-migración</p>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="bg-gray-50 px-6 py-4">
-                        <div class="flex items-center justify-between">
-                            <span class="text-sm font-medium text-blue-600">Modalidad: Por entregable</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Process Section -->
-    <section class="py-16 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">Nuestro Proceso de Trabajo</h2>
-                <p class="mt-3 max-w-2xl mx-auto text-xl text-gray-500 sm:mt-4">Metodología probada para garantizar resultados excepcionales</p>
-            </div>
-
-            <div class="relative">
-                <div class="hidden md:block absolute top-0 left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-gray-200"></div>
-                
-                <div class="relative grid gap-10">
-                    <!-- Step 1 -->
-                    <div class="pop-in flex flex-col md:flex-row items-center">
-                        <div class="flex-shrink-0 flex items-center justify-center h-16 w-16 rounded-full bg-blue-100 text-blue-600 border-4 border-white z-10">
-                            <span class="text-xl font-bold">1</span>
-                        </div>
-                        <div class="mt-4 md:mt-0 md:ml-6 md:mr-6 flex-1">
-                            <div class="flex-1 bg-gray-50 p-6 rounded-lg shadow-sm">
-                                <h3 class="text-lg font-medium text-gray-900">Evaluación Inicial</h3>
-                                <p class="mt-2 text-base text-gray-500">Analizamos tu base de datos actual para identificar cuellos de botella, consultas problemáticas y oportunidades de mejora.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Step 2 -->
-                    <div class="pop-in flex flex-col md:flex-row items-center">
-                        <div class="flex-shrink-0 flex items-center justify-center h-16 w-16 rounded-full bg-blue-100 text-blue-600 border-4 border-white z-10">
-                            <span class="text-xl font-bold">2</span>
-                        </div>
-                        <div class="mt-4 md:mt-0 md:ml-6 md:mr-6 flex-1">
-                            <div class="flex-1 bg-gray-50 p-6 rounded-lg shadow-sm">
-                                <h3 class="text-lg font-medium text-gray-900">Plan Personalizado</h3>
-                                <p class="mt-2 text-base text-gray-500">Creamos un plan detallado con recomendaciones específicas para tu caso, incluyendo estimación de tiempos y costos.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Step 3 -->
-                    <div class="pop-in flex flex-col md:flex-row items-center">
-                        <div class="flex-shrink-0 flex items-center justify-center h-16 w-16 rounded-full bg-blue-100 text-blue-600 border-4 border-white z-10">
-                            <span class="text-xl font-bold">3</span>
-                        </div>
-                        <div class="mt-4 md:mt-0 md:ml-6 md:mr-6 flex-1">
-                            <div class="flex-1 bg-gray-50 p-6 rounded-lg shadow-sm">
-                                <h3 class="text-lg font-medium text-gray-900">Implementación</h3>
-                                <p class="mt-2 text-base text-gray-500">Implementamos las mejoras en un entorno controlado, verificando el impacto positivo antes de llevarlo a producción.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Step 4 -->
-                    <div class="pop-in flex flex-col md:flex-row items-center">
-                        <div class="flex-shrink-0 flex items-center justify-center h-16 w-16 rounded-full bg-blue-100 text-blue-600 border-4 border-white z-10">
-                            <span class="text-xl font-bold">4</span>
-                        </div>
-                        <div class="mt-4 md:mt-0 md:ml-6 md:mr-6 flex-1">
-                            <div class="flex-1 bg-gray-50 p-6 rounded-lg shadow-sm">
-                                <h3 class="text-lg font-medium text-gray-900">Soporte Continuo</h3>
-                                <p class="mt-2 text-base text-gray-500">Ofrecemos seguimiento post-implementación para asegurar que todo funcione perfectamente y resolver cualquier duda.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Us Section -->
-    <section id="aboutAs" class="py-16 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">Sobre Nosotros</h2>
-            </div>
-            <div class="grid md:grid-cols-1 gap-8">
-                <div class="bg-white p-8 rounded-xl shadow-sm">
-                    <p class="text-lg text-gray-600 mb-6">
-                        En Jinwo Consulting nos especializamos en brindar soluciones integrales en bases de datos, con un enfoque en la optimización, mantenimiento y migración de sistemas críticos. Contamos con más de 2 años de experiencia trabajando con bases de datos Oracle, MySQL y PostgreSQL, tanto en entornos on-premise como en la nube.
-                    </p>
-                    <p class="text-lg text-gray-600 mb-6">
-                        Mi nombre es Nahuel, soy Analista en Sistemas y llevo años trabajando en proyectos reales para empresas de diferentes industrias, tanto en forma independiente como colaborando con equipos de desarrollo y áreas técnicas. A lo largo de este camino, participé en:
-                    </p>
-                    <ul class="space-y-3 mb-6 text-gray-600">
-                        <li class="flex items-start">
-                            <div class="flex-shrink-0">
-                                <i class="fas fa-check-circle text-green-500"></i>
-                            </div>
-                            <p class="ml-2">Optimización de rendimiento de consultas SQL para entornos con alto volumen de datos.</p>
-                        </li>
-                        <li class="flex items-start">
-                            <div class="flex-shrink-0">
-                                <i class="fas fa-check-circle text-green-500"></i>
-                            </div>
-                            <p class="ml-2">Migraciones completas entre motores de base de datos (Oracle a PostgreSQL, SQL Server a MySQL, etc.).</p>
-                        </li>
-                        <li class="flex items-start">
-                            <div class="flex-shrink-0">
-                                <i class="fas fa-check-circle text-green-500"></i>
-                            </div>
-                            <p class="ml-2">Diagnóstico y resolución de cuellos de botella en bases de datos críticas para operaciones.</p>
-                        </li>
-                        <li class="flex items-start">
-                            <div class="flex-shrink-0">
-                                <i class="fas fa-check-circle text-green-500"></i>
-                            </div>
-                            <p class="ml-2">Diseño y normalización de estructuras de datos para nuevos desarrollos y aplicaciones web.</p>
-                        </li>
-                        <li class="flex items-start">
-                            <div class="flex-shrink-0">
-                                <i class="fas fa-check-circle text-green-500"></i>
-                            </div>
-                            <p class="ml-2">Automatización de backups, auditorías y monitoreos en entornos productivos.</p>
-                        </li>
-                    </ul>
-                    <p class="text-lg text-gray-600">
-                        Mi enfoque es claro: brindar soluciones simples, seguras y eficientes, con un compromiso real por la estabilidad y el rendimiento de cada sistema. Cada cliente es una alianza, y por eso dedicamos tiempo a entender las necesidades del negocio antes de ofrecer cualquier solución técnica.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Technologies Section -->
-    <section class="py-16 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">Tecnologías que Utilizamos</h2>
-                <p class="mt-3 max-w-2xl mx-auto text-xl text-gray-500 sm:mt-4">Expertos en los principales motores de bases de datos del mercado</p>
-            </div>
-            <div class="grid md:grid-cols-4 gap-8 text-center">
-                <div class="p-6">
-                    <img src="https://www.postgresql.org/media/img/about/press/elephant.png" alt="PostgreSQL Logo" class="mx-auto h-16 mb-4" />
-                    <h3 class="text-xl font-medium text-gray-900 mb-2">PostgreSQL</h3>
-                    <p class="text-gray-600">Base de datos relacional de código abierto avanzada y escalable</p>
-                </div>
-                <div class="p-6">
-                    <img src="https://www.mysql.com/common/logos/logo-mysql-170x115.png" alt="MySQL Logo" class="mx-auto h-16 mb-4" />
-                    <h3 class="text-xl font-medium text-gray-900 mb-2">MySQL</h3>
-                    <p class="text-gray-600">Sistema de gestión de bases de datos relacional más popular</p>
-                </div>
-                <div class="p-6">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Oracle_logo.svg/512px-Oracle_logo.svg.png" alt="Oracle Logo" class="mx-auto h-16 mb-4" />
-                    <h3 class="text-xl font-medium text-gray-900 mb-2">Oracle</h3>
-                    <p class="text-gray-600">Solución empresarial para gestión de datos compleja</p>
-                </div>
-                <div class="p-6">
-                    <i class="fab fa-microsoft text-6xl text-blue-500 mb-4"></i>
-                    <h3 class="text-xl font-medium text-gray-900 mb-2">SQL Server</h3>
-                    <p class="text-gray-600">Motor de base de datos desarrollado por Microsoft</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="py-16 bg-blue-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">Lo Que Dicen Nuestros Clientes</h2>
-                <p class="mt-3 max-w-2xl mx-auto text-xl text-gray-500 sm:mt-4">Empresas que han mejorado su rendimiento con nuestros servicios</p>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Testimonial 1 -->
-                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
-                    <div class="flex items-center mb-4">
-                        <div class="flex-shrink-0">
-                            <img class="h-12 w-12 rounded-full" src="https://randomuser.me/api/portraits/women/42.jpg" alt="Testimonial">
-                        </div>
-                        <div class="ml-4">
-                            <h3 class="text-lg font-medium text-gray-900">María Gómez</h3>
-                            <p class="text-gray-500">CTO, RetailTech</p>
-                        </div>
-                    </div>
-                    <div class="text-gray-600 italic">
-                        <p>"Las optimizaciones implementadas redujeron nuestros tiempos de consulta en un 80%. Nuestra aplicación ahora es mucho más rápida y los usuarios lo notan."</p>
-                    </div>
-                    <div class="mt-4 flex text-yellow-400">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star ml-1"></i>
-                        <i class="fas fa-star ml-1"></i>
-                        <i class="fas fa-star ml-1"></i>
-                        <i class="fas fa-star ml-1"></i>
-                    </div>
-                </div>
-
-                <!-- Testimonial 2 -->
-                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
-                    <div class="flex items-center mb-4">
-                        <div class="flex-shrink-0">
-                            <img class="h-12 w-12 rounded-full" src="https://randomuser.me/api/portraits/men/32.jpg" alt="Testimonial">
-                        </div>
-                        <div class="ml-4">
-                            <h3 class="text-lg font-medium text-gray-900">Carlos Rivas</h3>
-                            <p class="text-gray-500">Director TI, LogiCorp</p>
-                        </div>
-                    </div>
-                    <div class="text-gray-600 italic">
-                        <p>"El soporte mensual ha sido invaluable para nuestra operación. Han resuelto problemas antes de que afecten a nuestros usuarios y nos dan mucha tranquilidad."</p>
-                    </div>
-                    <div class="mt-4 flex text-yellow-400">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star ml-1"></i>
-                        <i class="fas fa-star ml-1"></i>
-                        <i class="fas fa-star ml-1"></i>
-                        <i class="fas fa-star ml-1"></i>
-                    </div>
-                </div>
-
-                <!-- Testimonial 3 -->
-                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
-                    <div class="flex items-center mb-4">
-                        <div class="flex-shrink-0">
-                            <img class="h-12 w-12 rounded-full" src="https://randomuser.me/api/portraits/men/75.jpg" alt="Testimonial">
-                        </div>
-                        <div class="ml-4">
-                            <h3 class="text-lg font-medium text-gray-900">Andrés Fernández</h3>
-                            <p class="text-gray-500">Gerente de Proyectos, HealthData</p>
-                        </div>
-                    </div>
-                    <div class="text-gray-600 italic">
-                        <p>"La migración de Oracle a PostgreSQL fue impecable. Cumplieron con todos los entregables en tiempo y sin un solo error. ¡Altamente recomendados!"</p>
-                    </div>
-                    <div class="mt-4 flex text-yellow-400">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star ml-1"></i>
-                        <i class="fas fa-star ml-1"></i>
-                        <i class="fas fa-star ml-1"></i>
-                        <i class="fas fa-star ml-1"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="py-16 bg-blue-600 text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl font-extrabold sm:text-4xl mb-6">¿Listo para Optimizar tu Base de Datos?</h2>
-            <p class="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">Contáctanos hoy mismo para una consulta gratuita y descubre cómo podemos mejorar el rendimiento de tu sistema.</p>
-            <a href="#contact" class="bg-white hover:bg-gray-100 text-blue-600 font-bold py-3 px-8 rounded-lg text-lg inline-block transition duration-300 transform hover:scale-105">Solicitar Consulta</a>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-16 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">Contáctanos</h2>
-                <p class="mt-3 max-w-2xl mx-auto text-xl text-gray-500 sm:mt-4">Completa el formulario y nos pondremos en contacto contigo en menos de 24 horas</p>
-            </div>
-
-            <div class="bg-white shadow-xl rounded-lg overflow-hidden">
-                <div class="md:flex">
-                    <div class="md:w-1/2 bg-gray-50 p-8">
-                        <h3 class="text-2xl font-bold text-gray-900 mb-6">Información de Contacto</h3>
-                        
-                        <div class="flex items-start mb-6">
-                            <div class="flex-shrink-0 h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <div class="ml-4">
-                                <h4 class="text-lg font-medium text-gray-900">Oficina Principal</h4>
-                                <p class="mt-1 text-gray-600">Ramallo, Provincia de Buenos Aires, Argentina</p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-start mb-6">
-                            <div class="flex-shrink-0 h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div class="ml-4">
-                                <h4 class="text-lg font-medium text-gray-900">Correo Electrónico</h4>
-                                <p class="mt-1 text-gray-600">nahuelnicolas2001@hotmail.com</p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-start">
-                            <div class="flex-shrink-0 h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600">
-                                <i class="fas fa-phone-alt"></i>
-                            </div>
-                            <div class="ml-4">
-                                <h4 class="text-lg font-medium text-gray-900">Teléfono</h4>
-                                <p class="mt-1 text-gray-600">+54 3407511792</p>
-                            </div>
-                        </div>
-
-                        <div class="mt-12">
-                            <h3 class="text-2xl font-bold text-gray-900 mb-4">Horario de Atención</h3>
-                            <p class="text-gray-600 mb-2">Lunes a Viernes: 12:00 PM - 6:00 PM</p>
-                            <p class="text-gray-600">Soporte de emergencia 24/7 disponible para clientes</p>
-                        </div>
-                    </div>
-
-                    <div class="md:w-1/2 p-8">
-                     <form action="https://formsubmit.co/nahuelnicolas2001@hotmail.com" method="POST" class="space-y-6">
-    <input type="hidden" name="_captcha" value="false">
-    <input type="hidden" name="_next" value="https://tusitio.github.io/gracias.html"> <!-- Cambia esto si querés redirigir -->
-
+<!-- ===== Hero ===== -->
+<section class="hero" id="top">
+  <div class="container hero__inner">
     <div>
-        <label for="name" class="block text-sm font-medium text-gray-700">Nombre Completo</label>
-        <input type="text" id="name" name="Nombre" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+      <h1>Convertimos datos desordenados en sistemas de información que tu empresa puede usar</h1>
+      <p class="hero__subtitle">Optimización de bases de datos, migración de información y control de calidad de datos para empresas que necesitan más orden, rendimiento y control sobre lo que ya tienen.</p>
+      <div class="hero__ctas">
+        <a href="#contacto" class="btn btn--primary">Solicitar diagnóstico</a>
+        <a href="#casos" class="btn btn--ghost">Ver casos reales</a>
+      </div>
+    </div>
+
+    <div class="hero__visual">
+      <div class="console" role="img" aria-label="Ilustración de una consulta SQL detectando datos duplicados y sin formato, y un panel mostrando esos problemas resueltos">
+        <div class="console__bar">
+          <span class="console__dot"></span><span class="console__dot"></span><span class="console__dot"></span>
+          <span class="console__file">diagnostico.sql</span>
+        </div>
+        <div class="console__body">
+          <div class="query-line"><span class="kw">SELECT</span> id, email, estado <span class="kw">FROM</span> clientes<br><span class="kw">WHERE</span> <span>duplicado = 1 OR estado IS NULL;</span><span class="cursor"></span></div>
+          <div class="diagnostics">
+            <div>
+              <h4>Detectado</h4>
+              <div class="diag-item diag-item--issue"><i class="fas fa-circle"></i>Registros duplicados</div>
+              <div class="diag-item diag-item--issue"><i class="fas fa-circle"></i>Formatos inconsistentes</div>
+              <div class="diag-item diag-item--issue"><i class="fas fa-circle"></i>Valores nulos</div>
+            </div>
+            <div>
+              <h4>Resuelto</h4>
+              <div class="diag-item diag-item--fixed"><i class="fas fa-circle"></i>Datos normalizados</div>
+              <div class="diag-item diag-item--fixed"><i class="fas fa-circle"></i>Reglas de validación</div>
+              <div class="diag-item diag-item--fixed"><i class="fas fa-circle"></i>Información consultable</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Problems ===== -->
+<section class="problems section--tight" id="problemas">
+  <div class="container">
+    <div class="section-head">
+      <h2>¿Tus datos están frenando tu operación?</h2>
+      <p>Estos son los problemas más comunes que vemos en empresas antes de trabajar en su información.</p>
+    </div>
+  </div>
+  <div class="container">
+    <div class="problems__grid">
+      <div class="problem-item"><i class="fas fa-folder-open"></i><p>Información distribuida en múltiples archivos</p></div>
+      <div class="problem-item"><i class="fas fa-gauge-high"></i><p>Bases de datos lentas</p></div>
+      <div class="problem-item"><i class="fas fa-hourglass-half"></i><p>Consultas SQL demasiado lentas</p></div>
+      <div class="problem-item"><i class="fas fa-clone"></i><p>Datos duplicados o inconsistentes</p></div>
+      <div class="problem-item"><i class="fas fa-magnifying-glass"></i><p>Información difícil de consultar</p></div>
+      <div class="problem-item"><i class="fas fa-hand"></i><p>Procesos manuales para mover o cargar datos</p></div>
+      <div class="problem-item"><i class="fas fa-right-left"></i><p>Migraciones complejas entre sistemas</p></div>
+      <div class="problem-item"><i class="fas fa-database"></i><p>Grandes volúmenes de datos sin organizar</p></div>
+      <div class="problem-item"><i class="fas fa-sliders"></i><p>Sistemas que necesitan optimización</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Services ===== -->
+<section class="section" id="servicios">
+  <div class="container">
+    <div class="section-head">
+      <h2>Servicios</h2>
+      <p>Cada servicio está pensado para resolver un problema concreto, no para vender tecnología.</p>
+    </div>
+
+    <div class="service-row">
+      <div class="service-row__head"><span class="mono-tag">DB</span><h3>Optimización de Bases de Datos</h3></div>
+      <div class="service-cols">
+        <div><span>Problema</span><p>Consultas y procesos cada vez más lentos a medida que crece el volumen de datos.</p></div>
+        <div><span>Qué hacemos</span><p>Diagnóstico de rendimiento, ajuste de estructuras, índices y configuración del motor.</p></div>
+        <div><span>Resultado</span><p>Una base de datos que responde con la velocidad que tu operación necesita.</p></div>
+      </div>
+    </div>
+
+    <div class="service-row">
+      <div class="service-row__head"><span class="mono-tag">SQL</span><h3>SQL Query Optimization</h3></div>
+      <div class="service-cols">
+        <div><span>Problema</span><p>Queries que tardan minutos en devolver resultados o bloquean otros procesos.</p></div>
+        <div><span>Qué hacemos</span><p>Reescritura de consultas, análisis de planes de ejecución e índices específicos.</p></div>
+        <div><span>Resultado</span><p>Consultas más rápidas sin tocar la lógica de negocio.</p></div>
+      </div>
+    </div>
+
+    <div class="service-row">
+      <div class="service-row__head"><span class="mono-tag">ETL</span><h3>Migración y Transformación de Datos</h3></div>
+      <div class="service-cols">
+        <div><span>Problema</span><p>Necesitás mover datos entre motores o sistemas sin perder información.</p></div>
+        <div><span>Qué hacemos</span><p>Migración entre Oracle, MySQL, PostgreSQL y SQL Server, con transformación y validación.</p></div>
+        <div><span>Resultado</span><p>Tus datos en el sistema correcto, completos y consistentes.</p></div>
+      </div>
+    </div>
+
+    <div class="service-row">
+      <div class="service-row__head"><span class="mono-tag">DQ</span><h3>Data Cleaning &amp; Data Quality</h3></div>
+      <div class="service-cols">
+        <div><span>Problema</span><p>Datos duplicados, incompletos o con formatos inconsistentes que afectan tus decisiones.</p></div>
+        <div><span>Qué hacemos</span><p>Auditoría, normalización y limpieza con reglas de validación a medida.</p></div>
+        <div><span>Resultado</span><p>Información confiable para operar y decidir.</p></div>
+      </div>
+    </div>
+
+    <div class="service-row">
+      <div class="service-row__head"><span class="mono-tag">AUTO</span><h3>Automatización de Procesos de Datos</h3></div>
+      <div class="service-cols">
+        <div><span>Problema</span><p>Tareas manuales y repetitivas para mover, revisar o cargar información.</p></div>
+        <div><span>Qué hacemos</span><p>Automatización de cargas, validaciones, backups y reportes.</p></div>
+        <div><span>Resultado</span><p>Menos trabajo manual y menos errores humanos.</p></div>
+      </div>
+    </div>
+
+    <div class="service-row">
+      <div class="service-row__head"><span class="mono-tag">DEV</span><h3>Desarrollo de Herramientas para Datos</h3></div>
+      <div class="service-cols">
+        <div><span>Problema</span><p>La información existe pero es difícil de consultar o compartir con el equipo.</p></div>
+        <div><span>Qué hacemos</span><p>Aplicaciones web a medida para buscar, visualizar y consultar datos.</p></div>
+        <div><span>Resultado</span><p>Tu equipo accede a la información sin depender de un técnico.</p></div>
+      </div>
+    </div>
+
+    <div class="cta-banner">
+      <div>
+        <h3>¿Alguno de estos problemas te suena familiar?</h3>
+        <p>Contame qué está pasando con tus datos y te digo por dónde empezar.</p>
+      </div>
+      <a href="#contacto" class="btn btn--primary">Solicitar diagnóstico</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Cases ===== -->
+<section class="cases section" id="casos">
+  <div class="container">
+    <div class="section-head">
+      <h2>Casos de trabajo reales</h2>
+      <p>Dos proyectos concretos en los que trabajé, con los datos tal como se documentaron.</p>
+    </div>
+
+    <!-- Case 1 -->
+    <article class="case-card">
+      <div class="case-head">
+        <div><span class="mono-tag">Data Quality</span><h3>Optimización de Calidad de Datos</h3></div>
+      </div>
+      <p class="case-context">Se trabajó sobre una base de datos para auditar y mejorar la calidad de la información, aplicando procesos de normalización, limpieza y validación.</p>
+
+      <div class="bars">
+        <div class="bar-group">
+          <h4>Auditoría inicial — 2.000 registros</h4>
+          <div class="bar-row">
+            <div class="bar-row__label"><span>Registros válidos</span><strong>48,2% (964)</strong></div>
+            <div class="bar-track"><div class="bar-fill bar-fill--bad" style="width:48.2%"></div></div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-row__label"><span>Con errores o inconsistencias</span><strong>51,8% (1.036)</strong></div>
+            <div class="bar-track"><div class="bar-fill bar-fill--bad" style="width:51.8%"></div></div>
+          </div>
+        </div>
+        <div class="bar-group">
+          <h4>Después del procesamiento — 1.500 registros analizados</h4>
+          <div class="bar-row">
+            <div class="bar-row__label"><span>Registros válidos</span><strong>91,2% (1.368)</strong></div>
+            <div class="bar-track"><div class="bar-fill bar-fill--good" style="width:91.2%"></div></div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-row__label"><span>Con problemas restantes</span><strong>8,8% (132)</strong></div>
+            <div class="bar-track"><div class="bar-fill bar-fill--good" style="width:8.8%"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <a href="https://www.linkedin.com/feed/update/urn:li:activity:7350899200701730816/" target="_blank" rel="noopener noreferrer" class="case-link"><i class="fab fa-linkedin"></i>Ver publicación en LinkedIn</a>
+    </article>
+
+    <!-- Case 2 -->
+    <article class="case-card">
+      <div class="case-head">
+        <div><span class="mono-tag">Migración + Desarrollo</span><h3>Migración Masiva de Datos + Desarrollo de Herramienta Web</h3></div>
+      </div>
+      <p class="case-context">Más de 2 millones de registros distribuidos en 5 archivos Excel fueron migrados, transformados y organizados en una base MySQL optimizada, implementada en un VPS del cliente, junto con el desarrollo de una aplicación web con buscador estilo Google para consultar la información.</p>
+
+      <div class="pipeline" role="img" aria-label="Flujo: más de 2 millones de registros en 5 archivos Excel, migración y transformación, MySQL, VPS, aplicación web, buscador">
+        <div class="pipeline__step">2M+ registros</div><span class="pipeline__arrow"><i class="fas fa-arrow-right"></i></span>
+        <div class="pipeline__step">5 archivos Excel</div><span class="pipeline__arrow"><i class="fas fa-arrow-right"></i></span>
+        <div class="pipeline__step">Migración / transformación</div><span class="pipeline__arrow"><i class="fas fa-arrow-right"></i></span>
+        <div class="pipeline__step">MySQL</div><span class="pipeline__arrow"><i class="fas fa-arrow-right"></i></span>
+        <div class="pipeline__step">VPS</div><span class="pipeline__arrow"><i class="fas fa-arrow-right"></i></span>
+        <div class="pipeline__step">Aplicación web</div><span class="pipeline__arrow"><i class="fas fa-arrow-right"></i></span>
+        <div class="pipeline__step">Buscador</div>
+      </div>
+
+      <p class="case-result">El cliente pasó de trabajar con archivos grandes y búsquedas manuales a consultar su información de forma organizada, segura y rápida desde una aplicación web.</p>
+      <a href="https://www.linkedin.com/feed/update/urn:li:activity:7350910226117595140/" target="_blank" rel="noopener noreferrer" class="case-link"><i class="fab fa-linkedin"></i>Ver publicación en LinkedIn</a>
+    </article>
+  </div>
+</section>
+
+<!-- ===== Credibility ===== -->
+<section class="section--tight" id="experiencia">
+  <div class="container">
+    <div class="section-head">
+      <h2>Experiencia en proyectos reales</h2>
+      <p>Esto es lo que respalda el trabajo, no una lista de clientes.</p>
+    </div>
+    <div class="credibility__grid">
+      <div class="cred-highlight">
+        <div class="num">+2M</div>
+        <p>Registros procesados en un proyecto de migración de datos, desde 5 archivos Excel hacia una base MySQL en producción.</p>
+      </div>
+      <ul class="cred-list">
+        <li><i class="fas fa-check"></i>Migración de datos entre motores (Oracle, MySQL, PostgreSQL, SQL Server)</li>
+        <li><i class="fas fa-check"></i>Data cleaning y control de calidad de datos</li>
+        <li><i class="fas fa-check"></i>SQL y PL/SQL aplicados a entornos productivos</li>
+        <li><i class="fas fa-check"></i>Desarrollo de herramientas web para consultar información</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Process ===== -->
+<section class="section" id="proceso" style="background:var(--paper);">
+  <div class="container">
+    <div class="section-head">
+      <h2>Proceso de trabajo</h2>
+      <p>No hacemos cambios a ciegas: primero entendemos el problema, después tocamos el sistema.</p>
+    </div>
+    <div class="process__list">
+      <div class="process__step"><div class="process__num">01</div><div><h3>Diagnóstico</h3><p>Entendemos qué está pasando con tus datos o tu base de datos y qué problema de negocio hay detrás.</p></div></div>
+      <div class="process__step"><div class="process__num">02</div><div><h3>Análisis</h3><p>Revisamos la estructura, la calidad y el comportamiento real de la información y del sistema.</p></div></div>
+      <div class="process__step"><div class="process__num">03</div><div><h3>Propuesta</h3><p>Definimos una solución concreta, con alcance y pasos claros antes de tocar nada en producción.</p></div></div>
+      <div class="process__step"><div class="process__num">04</div><div><h3>Implementación</h3><p>Aplicamos los cambios de forma controlada, cuidando la continuidad de la operación.</p></div></div>
+      <div class="process__step"><div class="process__num">05</div><div><h3>Validación</h3><p>Confirmamos que el resultado resuelve el problema original antes de dar el trabajo por cerrado.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Tech ===== -->
+<section class="section--tight">
+  <div class="container">
+    <div class="section-head">
+      <h2>Tecnologías</h2>
+      <p>Motores y lenguajes con los que trabajo en optimización, migración y desarrollo de datos.</p>
+    </div>
+    <div class="tech__grid">
+      <span class="tech-pill">Oracle</span>
+      <span class="tech-pill">PostgreSQL</span>
+      <span class="tech-pill">MySQL</span>
+      <span class="tech-pill">SQL Server</span>
+      <span class="tech-pill">SQL</span>
+      <span class="tech-pill">PL/SQL</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== About ===== -->
+<section class="section" id="sobre-mi" style="background:var(--paper);">
+  <div class="container">
+    <div class="section-head">
+      <h2>Sobre mí</h2>
+    </div>
+    <div class="about__grid">
+      <div>
+        <div class="about__mark" aria-hidden="true">NB</div>
+        <p class="about__role">Nahuel Barrutia<br>Analista en Sistemas<br>Consultor / Desarrollador de Datos y Bases de Datos</p>
+      </div>
+      <div class="about__body">
+        <p>Trabajo en soluciones de datos y bases de datos: optimización de rendimiento, migración entre motores, limpieza y control de calidad de datos, automatización de procesos y desarrollo de herramientas para consultar información.</p>
+        <p>Los dos casos de esta página son proyectos reales en los que trabajé, no ejemplos genéricos. Mi enfoque es entender primero el problema de negocio detrás de los datos, y después definir la solución técnica.</p>
+        <div class="about__tags">
+          <span class="mono-tag">SQL</span>
+          <span class="mono-tag">PL/SQL</span>
+          <span class="mono-tag">Oracle</span>
+          <span class="mono-tag">Migración de datos</span>
+          <span class="mono-tag">Data Quality</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Contact ===== -->
+<section class="contact section" id="contacto">
+  <div class="container contact__grid">
+    <div>
+      <div class="section-head">
+        <h2>Solicitar diagnóstico</h2>
+        <p>Contame qué está pasando con tus datos y te respondo directamente.</p>
+      </div>
+
+      <div class="contact-item"><i class="fas fa-envelope"></i><div><h4>Correo electrónico</h4><p>nahuelnicolas2001@hotmail.com</p></div></div>
+      <div class="contact-item"><i class="fas fa-phone"></i><div><h4>Teléfono</h4><p>+54 3407511792</p></div></div>
+      <div class="contact-item"><i class="fab fa-linkedin"></i><div><h4>LinkedIn</h4><p>linkedin.com/in/nahuel-barrutia-2682851a9</p></div></div>
+      <div class="contact-item"><i class="fab fa-github"></i><div><h4>GitHub</h4><p>github.com/NahuelBarrutia</p></div></div>
+
+      <a href="https://wa.me/5493407511792?text=Hola%20Nahuel%2C%20quiero%20consultar%20sobre%20un%20problema%20de%20datos" target="_blank" rel="noopener noreferrer" class="btn whatsapp-btn"><i class="fab fa-whatsapp"></i>Escribir por WhatsApp</a>
     </div>
 
     <div>
-        <label for="email" class="block text-sm font-medium text-gray-700">Correo Electrónico</label>
-        <input type="email" id="email" name="Email" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500">
-    </div>
+      <form action="https://formsubmit.co/nahuelnicolas2001@hotmail.com" method="POST" id="contactForm">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="gracias.html">
+        <input type="hidden" name="_subject" value="Nueva consulta desde Jinwo Consulting">
 
-    <div>
-        <label for="company" class="block text-sm font-medium text-gray-700">Empresa</label>
-        <input type="text" id="company" name="Empresa" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500">
-    </div>
-
-    <div>
-        <label for="service" class="block text-sm font-medium text-gray-700">Servicio de Interés</label>
-        <select id="service" name="Servicio" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500">
-            <option value="">Selecciona un servicio</option>
-            <option value="optimization">Optimización de Queries</option>
-            <option value="support">Soporte DB Mensual</option>
-            <option value="performance">Performance Tuning</option>
-            <option value="migration">Migración Oracle a PostgreSQL</option>
-        </select>
-    </div>
-
-    <div>
-        <label for="message" class="block text-sm font-medium text-gray-700">Mensaje</label>
-        <textarea id="message" name="Mensaje" rows="4" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500"></textarea>
-    </div>
-
-    <div>
-        <button type="submit" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-300 transform hover:scale-105">
-            Enviar Mensaje
-        </button>
-    </div>
-</form> 
-                    </div>
-                </div>
-            </div>
+        <div class="field">
+          <label for="name">Nombre completo</label>
+          <input type="text" id="name" name="Nombre" required>
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-4 gap-8">
-                <div>
-                    <h3 class="text-lg font-bold mb-4">Jinwo Consulting</h3>
-                    <p class="text-gray-400 text-sm">Consultora especializada en optimización de bases de datos, ubicada en Ramallo, Provincia de Buenos Aires.</p>
-                </div>
-                <div>
-                    <h3 class="text-lg font-bold mb-4">Servicios</h3>
-                    <ul class="space-y-2">
-                        <li><a href="#services" class="text-gray-400 hover:text-white transition duration-300 text-sm">Optimización de Queries</a></li>
-                        <li><a href="#services" class="text-gray-400 hover:text-white transition duration-300 text-sm">Soporte DB Mensual</a></li>
-                        <li><a href="#services" class="text-gray-400 hover:text-white transition duration-300 text-sm">Performance Tuning</a></li>
-                        <li><a href="#services" class="text-gray-400 hover:text-white transition duration-300 text-sm">Migración de Bases de Datos</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-lg font-bold mb-4">Empresa</h3>
-                    <ul class="space-y-2">
-                        <li><a href="aboutAs" class="text-gray-400 hover:text-white transition duration-300 text-sm">Sobre Nosotros</a></li>
-                        <li><a href="testimonials" class="text-gray-400 hover:text-white transition duration-300 text-sm">Clientes</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="mt-12 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
-                <p class="text-gray-400 text-sm">© 2023 Jinwo Consulting. Todos los derechos reservados.</p>
-                <div class="mt-4 md:mt-0 flex space-x-6">
-                    </a>
-                    <a href="https://www.linkedin.com/in/nahuel-barrutia-2682851a9/" target="_blank" class="text-gray-400 hover:text-white transition duration-300">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                    <a href="https://github.com/NahuelBarrutia" target="_blank" class="text-gray-400 hover:text-white transition duration-300">
-                        <i class="fab fa-github"></i>
-                    </a>
-                </div>
-            </div>
+        <div class="field">
+          <label for="email">Correo electrónico</label>
+          <input type="email" id="email" name="Email" required>
         </div>
-    </footer>
+        <div class="field">
+          <label for="company">Empresa</label>
+          <input type="text" id="company" name="Empresa">
+        </div>
+        <div class="field">
+          <label for="service">Servicio de interés</label>
+          <select id="service" name="Servicio">
+            <option value="">Seleccioná una opción</option>
+            <option value="Optimización de Bases de Datos">Optimización de Bases de Datos</option>
+            <option value="SQL Query Optimization">SQL Query Optimization</option>
+            <option value="Migración y Transformación de Datos">Migración y Transformación de Datos</option>
+            <option value="Data Cleaning y Data Quality">Data Cleaning &amp; Data Quality</option>
+            <option value="Automatización de Procesos de Datos">Automatización de Procesos de Datos</option>
+            <option value="Desarrollo de Herramientas para Datos">Desarrollo de Herramientas para Datos</option>
+            <option value="No estoy seguro">No estoy seguro</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="message">Contame tu problema</label>
+          <textarea id="message" name="Mensaje" rows="4" required></textarea>
+        </div>
+        <button type="submit" class="btn btn--primary btn--block">Solicitar diagnóstico</button>
+      </form>
+    </div>
+  </div>
+</section>
 
-    <script>
-        // Mobile menu toggle
-        document.getElementById('mobile-menu-button').addEventListener('click', function() {
-            const menu = document.getElementById('mobile-menu');
-            menu.classList.toggle('hidden');
-        });
+<!-- ===== Footer ===== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <div class="footer__brand">
+          <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+            <ellipse cx="32" cy="16" rx="15" ry="6.5" stroke="#3D7BFF" stroke-width="3.5"/>
+            <path d="M17 16v14c0 3.6 6.7 6.5 15 6.5s15-2.9 15-6.5V16" stroke="#3D7BFF" stroke-width="3.5"/>
+            <path d="M17 30v14c0 3.6 6.7 6.5 15 6.5s15-2.9 15-6.5V30" stroke="#3D7BFF" stroke-width="3.5"/>
+          </svg>
+          Jinwo Consulting
+        </div>
+        <p>Soluciones de datos y bases de datos para empresas: optimización, migración, calidad de datos y automatización. Con base en Villa Ramallo, Buenos Aires.</p>
+      </div>
+      <div>
+        <h4>Servicios</h4>
+        <ul>
+          <li><a href="#servicios">Optimización de Bases de Datos</a></li>
+          <li><a href="#servicios">Migración de Datos</a></li>
+          <li><a href="#servicios">Data Cleaning &amp; Data Quality</a></li>
+          <li><a href="#servicios">Automatización de Procesos</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Empresa</h4>
+        <ul>
+          <li><a href="#casos">Casos reales</a></li>
+          <li><a href="#proceso">Proceso</a></li>
+          <li><a href="#sobre-mi">Sobre mí</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>© 2026 Jinwo Consulting. Todos los derechos reservados.</p>
+      <div class="socials">
+        <a href="https://www.linkedin.com/in/nahuel-barrutia-2682851a9/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://github.com/NahuelBarrutia" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://wa.me/5493407511792" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </div>
+  </div>
+</footer>
 
-        
+<script>
+  const nav = document.getElementById('siteNav');
+  window.addEventListener('scroll', function(){
+    nav.classList.toggle('is-scrolled', window.scrollY > 20);
+  });
 
-        // Animate progress bar on scroll
-        document.addEventListener('DOMContentLoaded', function() {
-            const progressBar = document.querySelector('.progress-bar');
-            
-            window.addEventListener('scroll', function() {
-                const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-                const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-                const scrolled = (scrollTop / scrollHeight) * 100;
-                progressBar.style.width = scrolled + '%';
-            });
+  const menuOpen = document.getElementById('menuOpen');
+  const menuClose = document.getElementById('menuClose');
+  const mobileMenu = document.getElementById('mobileMenu');
 
-            // Animate elements on scroll
-            const animateOnScroll = function() {
-                const elements = document.querySelectorAll('.pop-in');
-                
-                elements.forEach(element => {
-                    const elementPosition = element.getBoundingClientRect().top;
-                    const windowHeight = window.innerHeight;
-                    
-                    if (elementPosition < windowHeight - 100) {
-                        element.style.opacity = 1;
-                        element.style.transform = 'scale(1)';
-                    }
-                });
-            };
-
-            // Set initial state
-            document.querySelectorAll('.pop-in').forEach(el => {
-                el.style.opacity = 0;
-                el.style.transform = 'scale(0.8)';
-            });
-
-            window.addEventListener('scroll', animateOnScroll);
-            animateOnScroll(); // Run once on load
-
-            // Form submission
-            document.getElementById('contactForm').addEventListener('submit', function(e) {
-                e.preventDefault();
-                alert('¡Gracias por tu mensaje! Nos pondremos en contacto contigo pronto.');
-                this.reset();
-            });
-        });
-    </script>
+  function openMenu(){
+    mobileMenu.classList.add('is-open');
+    menuOpen.setAttribute('aria-expanded','true');
+  }
+  function closeMenu(){
+    mobileMenu.classList.remove('is-open');
+    menuOpen.setAttribute('aria-expanded','false');
+  }
+  menuOpen.addEventListener('click', openMenu);
+  menuClose.addEventListener('click', closeMenu);
+  mobileMenu.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', closeMenu);
+  });
+</script>
 </body>
 </html>

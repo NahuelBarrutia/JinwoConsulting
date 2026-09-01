@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gracias | Jinwo Consulting</title>
+<meta name="description" content="Recibimos tu consulta. Jinwo Consulting se pondrá en contacto a la brevedad.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230A0E1A'/%3E%3Cellipse cx='32' cy='18' rx='16' ry='7' fill='none' stroke='%232C5FE0' stroke-width='3'/%3E%3Cpath d='M16 18v14c0 3.9 7.2 7 16 7s16-3.1 16-7V18' fill='none' stroke='%232C5FE0' stroke-width='3'/%3E%3Cpath d='M16 32v14c0 3.9 7.2 7 16 7s16-3.1 16-7V32' fill='none' stroke='%233D7BFF' stroke-width='3'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+  :root{
+    --ink:#0A0E1A; --blue:#2C5FE0; --blue-bright:#3D7BFF;
+    --line-dark:#233252; --font-display:'Space Grotesk',sans-serif; --font-body:'IBM Plex Sans',sans-serif;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; min-height:100vh; display:flex; align-items:center; justify-content:center;
+    background:var(--ink); color:#fff; font-family:var(--font-body); text-align:center; padding:24px;
+  }
+  .card{max-width:480px;}
+  .mark{width:56px;height:56px;margin:0 auto 28px;}
+  h1{font-family:var(--font-display);font-size:1.9rem;margin:0 0 14px;letter-spacing:-0.01em;}
+  p{color:#B9C4DC;font-size:1.02rem;line-height:1.6;margin:0 0 30px;}
+  .btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:6px;
+    font-weight:600;font-size:0.92rem;text-decoration:none;border:1px solid transparent;
+  }
+  .btn--primary{background:var(--blue);color:#fff;}
+  .btn--primary:hover{background:var(--blue-bright);}
+  .btn--ghost{color:#fff;border-color:rgba(255,255,255,0.3);}
+  .btn--ghost:hover{border-color:#fff;}
+</style>
+</head>
+<body>
+  <div class="card">
+    <svg class="mark" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+      <ellipse cx="32" cy="16" rx="15" ry="6.5" stroke="#3D7BFF" stroke-width="3.5"/>
+      <path d="M17 16v14c0 3.6 6.7 6.5 15 6.5s15-2.9 15-6.5V16" stroke="#3D7BFF" stroke-width="3.5"/>
+      <path d="M17 30v14c0 3.6 6.7 6.5 15 6.5s15-2.9 15-6.5V30" stroke="#3D7BFF" stroke-width="3.5"/>
+    </svg>
+    <h1>Recibimos tu consulta</h1>
+    <p>Gracias por escribirnos. Vamos a revisar tu mensaje y te respondemos directamente por correo o WhatsApp.</p>
+    <div class="btns">
+      <a href="index.html" class="btn btn--primary">Volver al sitio</a>
+      <a href="https://wa.me/5493407511792" target="_blank" rel="noopener noreferrer" class="btn btn--ghost"><i class="fab fa-whatsapp"></i>Escribir por WhatsApp</a>
+    </div>
+  </div>
+</body>
+</html>
