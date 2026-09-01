@@ -140,10 +140,14 @@ button{font-family:inherit;}
   border-color:var(--line-dark);
 }
 .nav__inner{
-  display:flex;
+  display:grid;
+  grid-template-columns:auto 1fr auto auto;
   align-items:center;
-  justify-content:space-between;
+  gap:16px;
 }
+.nav__links{justify-self:center;}
+.nav__cta{justify-self:end;}
+.nav__toggle{justify-self:end;}
 .brand{
   display:flex;
   align-items:center;
